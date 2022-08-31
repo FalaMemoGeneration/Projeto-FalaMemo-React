@@ -1,13 +1,14 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './components/static/Footer';
+import Footer from './components/static/Footer/Footer';
+import Navbar from './components/static/Navbar/Navbar';
 
 function App() {
   return (
     <>
-      <h1>FalaMemo</h1>
-      {/*<Navbar />
-      <div style={{ minHeight: '100vh' }}>
+      
+      <Navbar />
+      {/*<div style={{ minHeight: '100vh' }}>
         <Routes> // Antigo Switch
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
