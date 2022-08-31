@@ -1,34 +1,59 @@
 import React from 'react'
 import './Footer.css'
 import { Grid, Box, Typography } from '@mui/material'
+import EmailIcon from '@mui/icons-material/EmailOutlined'
+import GitHubIcon from '@mui/icons-material/GitHub'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import InstagramIcon from '@mui/icons-material/Instagram'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 function Footer() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
-                <Grid alignItems="center" item xs={12}>
+            <Grid container direction="row" justifyContent="center" alignItems="center" className='footer-container'>
+                <Grid alignItems="center" item xs={6}>
                     <Box>
-                        <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom>Siga-nos nas redes sociais </Typography>
+                        <Typography variant="h5">Logo</Typography>
+                    </Box>
+                </Grid>
+                <Grid alignItems="center" item xs={3}>
+                    <Box>
+                        <Typography>FalaMemo</Typography>
+                    </Box>
+                    <Box>
+                        <Typography>Sobre </Typography>
+                    </Box>
+                    <Box>
+                        <Box>
+                            <Typography>Fale Conosco </Typography>
                         </Box>
-                        <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.facebook.com/generationbrasil" target="_blank">
+                        <Box>
+                            <a href="mailto:falamemogeneration@gmail.com" target="_blank">
+                                <EmailIcon />
+                            </a>
+                            <a href="https://github.com/FalaMemoGeneration" target="_blank">
+                                <GitHubIcon />
+                            </a>
+                            <a href="https://www.facebook.com" target="_blank">
                                 <FacebookIcon />
-                            </a>
-                            <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                                <InstagramIcon />
-                            </a>
-                            <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
-                                <LinkedInIcon />
                             </a>
                         </Box>
                     </Box>
-                    <Box>
+                </Grid>
+                <Grid alignItems="center" item xs={3}>
+                    <Box display="flex">
+                        <Typography className='footerTitle'>Informações</Typography>
+                    </Box>
+                    <Box display="flex">
+                        <Typography>Regras da Comunidade</Typography>
+                    </Box>
+                    <Box display="flex">
+                        <Typography>Termos de Uso</Typography>
+                    </Box>
+                </Grid>
+            </Grid>
+            <Grid>
+            <Box>
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom >© 2022 Copyright:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom >FalaMemo© 2022 Copyright:</Typography>
                         </Box>
                         <Box>
                             <a target="_blank" href="https://brasil.generation.org/">
@@ -36,7 +61,6 @@ function Footer() {
                             </a>
                         </Box>
                     </Box>
-                </Grid>
             </Grid>
         </>
     )
