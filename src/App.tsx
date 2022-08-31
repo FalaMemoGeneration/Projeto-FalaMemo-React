@@ -1,11 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Footer from './components/static/Footer';
 
 function App() {
   return (
-    <Router>
+    <>
       <h1>FalaMemo</h1>
-      {/* <Navbar />
+      {/*<Navbar />
       <div style={{ minHeight: '100vh' }}>
         <Routes> // Antigo Switch
           <Route path="/" element={<Login />} />
@@ -13,9 +14,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/cadastro" element={<CadastroUsuario />} />
         </Routes>
-      </div>
-      <Footer /> */}
-    </Router>
+  </div>*/}
+      <Footer />
+    </>
   )
 }
 
