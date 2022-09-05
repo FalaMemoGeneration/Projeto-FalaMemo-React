@@ -5,6 +5,7 @@ import Navbar from './components/static/Navbar/Navbar';
 import Login from './pages/login/Login';
 import Sobre from './pages/sobre/Sobre';
 import Home from './pages/home/Home';
+import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/home" element={<Home />} />
-          {/*<Route path="/cadastro" element={<CadastroUsuario />} /> */}
+          <Route path="/cadastro" element={<CadastroUsuario />} />
         </Routes>
   </div>
       <Footer />
