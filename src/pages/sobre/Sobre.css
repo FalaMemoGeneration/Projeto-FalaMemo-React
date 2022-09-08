@@ -1,0 +1,39 @@
+.sobre-container{
+    background-color: #f7f7f7;
+}
+
+.sobre-title{
+    font-family: "Roboto" !important;
+    font-weight: bold !important;
+    color: #000000;
+}
+
+.sobre-conteudo{
+    font-family: "Roboto" !important;
+    text-align: justify !important;
+    color: #000000;
+}
+
+.nome-integrante{
+    font-family: "Roboto" !important;
+    font-weight: bold !important;
+    color: #000000;
+}
+
+.sobre-integrante{
+    font-family: "Roboto" !important;
+    color: #000000;
+    text-align: justify;
+}
+
+.sobre-background{
+background-color: #dedede !important;
+width: 1489px !important;
+height: 342px !important;
+left: 0px !important;
+top: 1214px !important;
+}
+
+.sobre-icons{
+    color: #000000 !important;
+}
