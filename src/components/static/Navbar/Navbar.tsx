@@ -14,6 +14,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import "./Navbar.css";
 import Avatar from "@mui/material/Avatar";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { addToken } from "../../../store/tokens/actions";
+import { Box } from "@mui/material";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -72,16 +77,38 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function SearchAppBar() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
+  function Navbar() {
+    const classes = useStyles();
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+      (state) => state.tokens
+    );
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+  
+    function goLogout() {
+      dispatch(addToken(""));
+      alert("Você saiu!");
+      navigate("/login");
+    }
+  
+    let navbarComponent;
+  
+    if (token != "") {
+      navbarComponent = <div className={classes.root}>
       <AppBar position="static" className="nav-color">
         <Toolbar>
           <Toolbar>
             <img src="https://i.imgur.com/2XHo3mY.png" />
           </Toolbar>
+
+          <Link to="/temas" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography variant="h6" color="inherit">
+                  temas
+                </Typography>
+              </Box>
+            </Link>
+
           {/* Preciso de ajuda para centralizar a barra de buscas*/}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -113,5 +140,9 @@ export default function SearchAppBar() {
         </Toolbar>
       </AppBar>
     </div>
-  );
 }
+
+return ( <>{navbarComponent}</> )
+}
+
+export default Navbar;

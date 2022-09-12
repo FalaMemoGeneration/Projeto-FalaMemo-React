@@ -7,8 +7,6 @@ import Tema from '../../../models/Tema';
 import { busca } from '../../../services/Service';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
-
-
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
