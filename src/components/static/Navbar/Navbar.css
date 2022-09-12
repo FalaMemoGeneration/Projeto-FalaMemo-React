@@ -1,0 +1,24 @@
+.nav-color {
+  background-color: #DEDEDE !important;
+  color: #595959 !important;
+}
+
+.search-color-border {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border-radius: 6px !important;
+}
+
+.nav-avatar {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.nav-search-icon {
+  z-index: 1 !important;
+}
+
+.nav-toolbar {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
