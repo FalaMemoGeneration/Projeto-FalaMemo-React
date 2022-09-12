@@ -101,10 +101,34 @@ const useStyles = makeStyles((theme: Theme) =>
             <img src="https://i.imgur.com/2XHo3mY.png" />
           </Toolbar>
 
+          <Link to="/home" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography variant="h6" color="inherit">
+                  home
+                </Typography>
+              </Box>
+            </Link>
+
           <Link to="/temas" className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   temas
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to="/postagens" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography variant="h6" color="inherit">
+                  postagens
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to="/formularioTema" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography variant="h6" color="inherit">
+                  cadastrar tema
                 </Typography>
               </Box>
             </Link>

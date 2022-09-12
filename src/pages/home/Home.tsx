@@ -49,8 +49,7 @@ function Home() {
               align="center"
               className="titulo-h5"
             >
-              Blog pessoal com meus estudos sobre linguagens de programação e
-              tecnologias.
+              Compartilhe suas experiências.
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
@@ -66,10 +65,10 @@ function Home() {
         </Grid>
         <Grid item xs={6}>
           <img
-            src="https://i.imgur.com/1RwWtgp.png"
+            src="https://i.imgur.com/SynMmr9.png"
             alt=""
-            width="790px"
-            height="512px"
+            width="600px"
+            height="500px"
           />
         </Grid>
         <Grid xs={12} className="postagens">
