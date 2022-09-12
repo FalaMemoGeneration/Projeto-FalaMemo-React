@@ -5,6 +5,7 @@ interface Postagem {
     id: number
     titulo: string
     texto: string
+    avaliacao: number
     tema?: Tema | null
     usuario?: User | null
 }
