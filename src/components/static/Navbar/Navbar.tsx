@@ -19,6 +19,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
 import { Box } from "@mui/material";
+import BasicMenu from "./Menu/Menu";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -85,12 +86,6 @@ const useStyles = makeStyles((theme: Theme) =>
     let navigate = useNavigate();
     const dispatch = useDispatch();
   
-    function goLogout() {
-      dispatch(addToken(""));
-      alert("Você saiu!");
-      navigate("/login");
-    }
-  
     let navbarComponent;
   
     if (token != "") {
@@ -101,26 +96,12 @@ const useStyles = makeStyles((theme: Theme) =>
             <img src="https://i.imgur.com/2XHo3mY.png" />
           </Toolbar>
 
-          <Link to="/home" className="text-decorator-none">
-              <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  home
-                </Typography>
-              </Box>
-            </Link>
+          < BasicMenu />
 
           <Link to="/temas" className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   temas
-                </Typography>
-              </Box>
-            </Link>
-
-            <Link to="/postagens" className="text-decorator-none">
-              <Box mx={1} className="cursor">
-                <Typography variant="h6" color="inherit">
-                  postagens
                 </Typography>
               </Box>
             </Link>
@@ -133,7 +114,6 @@ const useStyles = makeStyles((theme: Theme) =>
               </Box>
             </Link>
 
-          {/* Preciso de ajuda para centralizar a barra de buscas*/}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon className="nav-search-icon" />
