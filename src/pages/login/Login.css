@@ -1,8 +1,9 @@
 .rectangle {
-  width: 400px;
-  height: 300px;
-  background-color: var(--color-gray-03)!important;
+  width: 450px;
+  height: 380px;
+  background-color: var(--color-gray-02)!important;
   padding: 2rem 2rem ;
+  border-radius: 6px ;
 }
 
 .boxLogin {
@@ -11,9 +12,22 @@
 }
 
 .btnEntrar {
-  width: 100% !important;
+  padding: 4px 10px !important;
   background: var(--color-blue-btn) !important;
   color: var(--color-white) !important;
+  font-size: 1rem !important;
+}
+
+.btnEntrar, .btnCadastrar {
+  width: 100% !important;
+  height: 40px !important;
+  padding: 6px 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.2 !important;
+}
+
+.link-senha {
+  color: var(--color-black-10) !important;
 }
 
 .text-decoretor-none {
@@ -22,7 +36,15 @@
 
 
 .btnCadastrar {
-  width: 100% !important;
   background: var(--color-red-btn) !important;
   color: var(--color-white) !important;
+  border-radius:4px !important;
+  text-transform: uppercase !important;
+}
+
+
+.input {
+  background: var(--color-white-01) !important;
+  border: none !important;
+  outline: 0 !important;
 }
