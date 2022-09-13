@@ -33,7 +33,7 @@ function Login() {
 
   useEffect(() => {
     if (token !== "") {
-      dispatch(addToken(token))
+      dispatch(addToken(token));
       navigate("/home");
     }
   }, [token]);
@@ -50,20 +50,28 @@ function Login() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid alignItems="center" xs={6}>
-        <Box paddingX={20}>
+    <Grid
+      container
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Grid
+        xs={5}
+        className="imagem"
+        style={{
+          backgroundImage: `url(https://i.imgur.com/7rhgzoN.jpg)`,
+          backgroundRepeat: "no-repeat",
+          width: "100vh",
+          minHeight: "100vh",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></Grid>
+
+      <Grid alignItems="center" xs={7} className="boxLogin" >
+        <div className="rectangle">
           <form onSubmit={onSubmit}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-              className="color-weight"
-            >
-              Entrar
-            </Typography>
             <TextField
               value={userLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -71,7 +79,6 @@ function Login() {
               label="Usuário"
               variant="outlined"
               name="usuario"
-              margin="normal"
               fullWidth
             />
             <TextField
@@ -86,42 +93,30 @@ function Login() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" className="botao">
-                Logar
+              <Button type="submit" variant="contained" className="btnEntrar">
+                Entrar
               </Button>
             </Box>
           </form>
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
               <Typography variant="subtitle1" gutterBottom align="center">
-                Não tem uma conta?
+                Esqueceu a senha?
               </Typography>
             </Box>
-            <Link to="/cadastro">
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                align="center"
-                className="color-weight"
-              >
-                Cadastre-se
-              </Typography>
-            </Link>
           </Box>
-        </Box>
+          <Link to="/cadastro" className="text-decoretor-none">
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              align="center"
+              className="btnCadastrar"
+            >
+              Cadastre-se
+            </Typography>
+          </Link>
+        </div>
       </Grid>
-      <Grid
-        xs={6}
-        className="imagem"
-        style={{
-          backgroundImage: `url(https://i.imgur.com/7rhgzoN.jpg)`,
-          backgroundRepeat: "no-repeat",
-          width: "100vh",
-          minHeight: "100vh",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></Grid>
     </Grid>
   );
 }

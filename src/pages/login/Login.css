@@ -1,0 +1,28 @@
+.rectangle {
+  width: 400px;
+  height: 300px;
+  background-color: var(--color-gray-03)!important;
+  padding: 2rem 2rem ;
+}
+
+.boxLogin {
+  flex-basis:  0 !important;
+  margin: 0 auto !important;
+}
+
+.btnEntrar {
+  width: 100% !important;
+  background: var(--color-blue-btn) !important;
+  color: var(--color-white) !important;
+}
+
+.text-decoretor-none {
+  text-decoration: none;
+}
+
+
+.btnCadastrar {
+  width: 100% !important;
+  background: var(--color-red-btn) !important;
+  color: var(--color-white) !important;
+}
