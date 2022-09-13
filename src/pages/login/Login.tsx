@@ -1,10 +1,10 @@
-import { Grid, TextField, Typography, Button } from "@material-ui/core";
+import { Grid, TextField, Typography, Button, GridList } from "@material-ui/core";
 import { Box } from "@mui/material";
 
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+
 
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
@@ -58,16 +58,16 @@ function Login() {
     >
       <Grid
         xs={5}
-        className="imagem"
-        style={{
-          backgroundImage: `url(https://i.imgur.com/7rhgzoN.jpg)`,
-          backgroundRepeat: "no-repeat",
-          width: "100vh",
-          minHeight: "100vh",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></Grid>
+        className="imagem">
+
+          <div className="frase">
+            <Typography  align="inherit">
+              Compartilhe suas experiências. 
+              Dê voz às <br /> minorias no FalaMemo
+            </Typography>
+          </div>
+      </Grid>
+
 
       <Grid alignItems="center" xs={7} className="boxLogin" >
         <div className="rectangle">
