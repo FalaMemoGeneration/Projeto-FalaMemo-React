@@ -2,7 +2,10 @@
   --color-red-btn:  linear-gradient(180deg, #E63946 0%, #A7000C 100%);
 
   --color-black: #111111;
+  --color-black-10: #2E2E2E;
+
   --color-white: #F7F7F7;
+  --color-white-01: #FFFFFF;
 
   --color-gray-02: #DEDEDE;
   --color-gray-03: #EDEDED;
@@ -21,6 +24,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: var(--color-white);
 }
 
 /*===COR NO SCROLL ====*/

@@ -79,6 +79,7 @@ function Login() {
               label="Usuário"
               variant="outlined"
               name="usuario"
+              className="input"
               fullWidth
             />
             <TextField
@@ -90,6 +91,7 @@ function Login() {
               name="senha"
               margin="normal"
               type="password"
+              className="input"
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
@@ -98,12 +100,12 @@ function Login() {
               </Button>
             </Box>
           </form>
-          <Box display="flex" justifyContent="center" marginTop={2}>
-            <Box marginRight={1}>
-              <Typography variant="subtitle1" gutterBottom align="center">
+          <Box display="flex" justifyContent="center" marginTop={2} marginBottom={4}>
+            <Link to="/" >
+              <Typography variant="subtitle1" gutterBottom align="center" className="link-senha">
                 Esqueceu a senha?
               </Typography>
-            </Box>
+            </Link>
           </Box>
           <Link to="/cadastro" className="text-decoretor-none">
             <Typography
@@ -112,7 +114,7 @@ function Login() {
               align="center"
               className="btnCadastrar"
             >
-              Cadastre-se
+             Crie uma conta
             </Typography>
           </Link>
         </div>
