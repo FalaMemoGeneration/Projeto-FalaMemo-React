@@ -5,8 +5,6 @@ import EmailIcon from '@mui/icons-material/EmailOutlined'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { TokenState } from '../../../store/tokens/tokensReducer'
 
 function Footer() {
 
@@ -23,14 +21,16 @@ function Footer() {
           item xs={3}>
           <Box>
             <img src='https://i.imgur.com/2XHo3mY.png' alt='Logo falaMemo' />
-
+          </Box>
+          <Box
+          marginLeft={2}>
             <Typography
               variant='subtitle2'
               gutterBottom
               className='text-style'
               paddingY={13}
               paddingBottom={1}>
-              FalaMemo© 2022 Copyright: <a target='_blank' href='https://brasil.generation.org/' className='text-decorator-none'>brasil.generation.org</a>
+              FalaMemo © 2022: <a target='_blank' href='https://brasil.generation.org/' className='text-decorator-none'>Generation Brasil</a>
             </Typography>
           </Box>
         </Grid>
