@@ -6,6 +6,8 @@ import Navbar from './components/static/Navbar/Navbar';
 import Login from './pages/login/Login';
 import Sobre from './pages/sobre/Sobre';
 import Home from './pages/home/Home';
+import Regras from './pages/regras/Regras';
+import Termos from './pages/termos/Termos';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import ListaTema from './components/temas/listaTema/ListaTema';
 import ListarPostagem from './components/postagens/listarPostagem/ListarPostagem';
@@ -27,6 +29,8 @@ function App() {
             <Route path="/cadastro" element={<CadastroUsuario />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/regras" element={<Regras />} />
+            <Route path="/termos" element={<Termos />} />
 
             <Route path="/temas" element={<ListaTema />} />
             <Route path="/postagens" element={<ListarPostagem />} />

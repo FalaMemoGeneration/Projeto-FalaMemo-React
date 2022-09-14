@@ -51,31 +51,28 @@ function Sobre() {
             </Box>
             <Box paddingRight={2}>
               <Typography className='sobre-integrante'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper blandit tempor. Duis tincidunt turpis in eros semper bibendum.
+              Pós-graduada em Letras, mas em transição de carreira para a área de Tecnologia. Formada no bootcamp da Generation Brasil, interessada em Desenvolvimento Web, UI/UX e jogos de simulação.
               </Typography>
             </Box>
             <Box>
-              <a 
+                <Typography className='sobre-integrante'>
+                  <a 
               href='https://www.linkedin.com/in/amdfd/' 
               target='_blank' 
               className='sobre-icons'>
-                <LinkedInIcon />
-                <Typography className='sobre-integrante'>LinkedIn</Typography>
-              </a>
-              <a 
+                <LinkedInIcon /> LinkedIn </a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='https://github.com/amdfd' 
               target='_blank' 
               className='sobre-icons'>
-                <GitHubIcon />
-                <Typography className='sobre-integrante'>GitHub</Typography>
-              </a>
-              <a 
+                <GitHubIcon /> GitHub</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='mailto:falamemogeneration@gmail.com' 
               target='_blank' 
               className='sobre-icons'>
-                <EmailIcon />
-                <Typography className='sobre-integrante'>Email</Typography>
-              </a>
+                <EmailIcon /> Email</a></Typography>
             </Box>
           </Grid>
         </Grid>
@@ -91,26 +88,23 @@ function Sobre() {
               </Typography>
             </Box>
             <Box>
-              <a 
+              
+                <Typography className='sobre-integrante'><a 
               href='https://www.linkedin.com/in/fernando-pajtak-barbosa-557279231/' 
               target='_blank' 
-              className='sobre-icons'><LinkedInIcon />
-                <Typography className='sobre-integrante'>LinkedIn</Typography>
-              </a>
-              <a
+              className='sobre-icons'><LinkedInIcon /> LinkedIn</a></Typography>
+              
+                <Typography className='sobre-integrante'><a
               href='https://github.com/pajtakk' 
               target='_blank' 
               className='sobre-icons'>
-                <GitHubIcon />
-                <Typography className='sobre-integrante'>GitHub</Typography>
-              </a>
-              <a 
+                <GitHubIcon /> GitHub</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='mailto:falamemogeneration@gmail.com' 
               target='_blank' 
               className='sobre-icons'>
-                <EmailIcon />
-                <Typography className='sobre-integrante'>Email</Typography>
-              </a>
+                <EmailIcon /> Email</a></Typography>
             </Box>
           </Grid>
           <Grid xs={3}>
@@ -138,27 +132,26 @@ function Sobre() {
               </Typography>
             </Box>
             <Box>
-              <a 
+              
+                <Typography className='sobre-integrante'><a 
               href='https://www.linkedin.com/in/filipecavalcantideandrade/' 
               target='_blank' 
               className='sobre-icons'>
-                <LinkedInIcon />
-                <Typography className='sobre-integrante'>LinkedIn</Typography>
-              </a>
-              <a 
+                <LinkedInIcon /> LinkedIn</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='https://github.com/filipe-cavalcanti' 
               target='_blank' 
               className='sobre-icons'>
-                <GitHubIcon />
-                <Typography className='sobre-integrante'>GitHub</Typography>
-              </a>
-              <a 
+                <GitHubIcon /> GitHub</a></Typography>
+              
+             
+                <Typography className='sobre-integrante'> <a 
               href='mailto:falamemogeneration@gmail.com' 
               target='_blank' 
               className='sobre-icons'>
-                <EmailIcon />
-                <Typography className='sobre-integrante'>Email</Typography>
-              </a>
+                <EmailIcon /> Email</a></Typography>
+              
             </Box>
           </Grid>
         </Grid>
@@ -174,26 +167,24 @@ function Sobre() {
               </Typography>
             </Box>
             <Box>
-              <a 
+              
+                <Typography className='sobre-integrante'><a 
               href='https://www.linkedin.com/in/ingrid-aquino-88a8b9147/' 
               target='_blank' 
-              className='sobre-icons'><LinkedInIcon />
-                <Typography className='sobre-integrante'>LinkedIn</Typography>
-              </a>
-              <a
+              className='sobre-icons'><LinkedInIcon /> LinkedIn</a></Typography>
+              
+                <Typography className='sobre-integrante'><a
               href='https://github.com/Ingridaquino' 
               target='_blank' 
               className='sobre-icons'>
-                <GitHubIcon />
-                <Typography className='sobre-integrante'>GitHub</Typography>
-              </a>
-              <a 
+                <GitHubIcon /> GitHub</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='mailto:falamemogeneration@gmail.com' 
               target='_blank' 
               className='sobre-icons'>
-                <EmailIcon />
-                <Typography className='sobre-integrante'>Email</Typography>
-              </a>
+                <EmailIcon /> Email</a></Typography>
+              
             </Box>
           </Grid>
           <Grid xs={3}>
@@ -217,31 +208,29 @@ function Sobre() {
             </Box>
             <Box paddingRight={2}>
               <Typography className='sobre-integrante'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper blandit tempor. Duis tincidunt turpis in eros semper bibendum.
+              Sou Jefferson, tenho 30 anos, adoro gatos e sou estudante na area de tecnologia.
               </Typography>
             </Box>
             <Box>
-              <a 
+              
+                <Typography className='sobre-integrante'><a 
               href='https://www.linkedin.com/in/jefferson-rocha-335494211/' 
               target='_blank' 
               className='sobre-icons'>
-                <LinkedInIcon />
-                <Typography className='sobre-integrante'>LinkedIn</Typography>
-              </a>
-              <a 
+                <LinkedInIcon /> LinkedIn</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='https://github.com/jefftrabalho' 
               target='_blank' 
               className='sobre-icons'>
-                <GitHubIcon />
-                <Typography className='sobre-integrante'>GitHub</Typography>
-              </a>
-              <a 
+                <GitHubIcon /> GitHub</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='mailto:falamemogeneration@gmail.com' 
               target='_blank' 
               className='sobre-icons'>
-                <EmailIcon />
-                <Typography className='sobre-integrante'>Email</Typography>
-              </a>
+                <EmailIcon /> Email</a></Typography>
+              
             </Box>
           </Grid>
         </Grid>
@@ -257,26 +246,24 @@ function Sobre() {
               </Typography>
             </Box>
             <Box>
-              <a 
+              
+                <Typography className='sobre-integrante'><a 
               href='https://www.linkedin.com/in/mari%C3%A1-calmon-dombrate/' 
               target='_blank' 
-              className='sobre-icons'><LinkedInIcon />
-                <Typography className='sobre-integrante'>LinkedIn</Typography>
-              </a>
-              <a
+              className='sobre-icons'><LinkedInIcon /> LinkedIn</a></Typography>
+              
+                <Typography className='sobre-integrante'><a
               href='https://github.com/dombrate' 
               target='_blank' 
               className='sobre-icons'>
-                <GitHubIcon />
-                <Typography className='sobre-integrante'>GitHub</Typography>
-              </a>
-              <a 
+                <GitHubIcon /> GitHub</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='mailto:falamemogeneration@gmail.com' 
               target='_blank' 
               className='sobre-icons'>
-                <EmailIcon />
-                <Typography className='sobre-integrante'>Email</Typography>
-              </a>
+                <EmailIcon /> Email</a></Typography>
+              
             </Box>
           </Grid>
           <Grid xs={3}>
@@ -300,31 +287,29 @@ function Sobre() {
             </Box>
             <Box paddingRight={2}>
               <Typography className='sobre-integrante'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper blandit tempor. Duis tincidunt turpis in eros semper bibendum.
+                Formada em Arquitetura e Urbanismo, mas em transição de carreira para área de tecnologia através do bootcamp da Generation de Pessoa Desenvolvedora Web Java Full Stack.
               </Typography>
             </Box>
             <Box>
-              <a 
+              
+                <Typography className='sobre-integrante'><a 
               href='https://www.linkedin.com/in/victoriaalcoforado/' 
               target='_blank' 
               className='sobre-icons'>
-                <LinkedInIcon />
-                <Typography className='sobre-integrante'>LinkedIn</Typography>
-              </a>
-              <a 
+                <LinkedInIcon /> LinkedIn</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='https://github.com/vickw3' 
               target='_blank' 
               className='sobre-icons'>
-                <GitHubIcon />
-                <Typography className='sobre-integrante'>GitHub</Typography>
-              </a>
-              <a 
+                <GitHubIcon /> GitHub</a></Typography>
+              
+                <Typography className='sobre-integrante'><a 
               href='mailto:falamemogeneration@gmail.com' 
               target='_blank' 
               className='sobre-icons'>
-                <EmailIcon />
-                <Typography className='sobre-integrante'>Email</Typography>
-              </a>
+                <EmailIcon /> Email</a></Typography>
+              
             </Box>
           </Grid>
         </Grid>
