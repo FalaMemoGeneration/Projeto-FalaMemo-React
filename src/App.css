@@ -10,10 +10,13 @@
   --color-gray-02: #DEDEDE;
   --color-gray-03: #EDEDED;
   --color-gray-04: #CCCCCC;
+  --color-gray-09: #404040;
 
   --color-blue-btn: linear-gradient(180deg, #50688B 0%, #1D3557 100%);
   --color-blue-05: #93A6C3;
   --color-blue-04: #6A81A3;
+  --color-blue-01: #1D3557;
+  --color-blue-03: #50688B;
 }
 
 * {
