@@ -1,15 +1,22 @@
-.imagem {
-  background-image: url(../../assets/logogrande.svg);
-  background-repeat: no-repeat;
+.grid-logo {
   width: 100vh;
   min-height: 100vh;
-  background-size: 256px;
-  background-position: center 34%;
+  margin: 0 auto !important;
+}
+
+.logo {
+  width: 90%;
+  align-items: center;
+  margin: 12rem 0 0 9rem !important;
+}
+
+.logo img {
+  width: 60%;
 }
 
 .rectangle {
-  width: 420px;
-  height: 380px;
+  width: 520px;
+  height: 400px;
   background-color: var(--color-gray-02)!important;
   padding: 2rem 2rem ;
   border-radius: 6px ;
@@ -17,7 +24,8 @@
 
 .boxLogin {
   flex-basis:  0 !important;
-  margin: 0 auto !important;
+  margin: 0 9rem;
+  /* margin: 0 auto !important; */
 }
 
 .btnEntrar {
@@ -66,8 +74,8 @@
 }
 
 
-.frase {
+/* .frase {
   position: absolute;
   bottom: 36%;
   left: 11.3%;
-}
+} */

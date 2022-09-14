@@ -24,16 +24,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--color-white);
+  background-color: var(--color-red-btn);
 }
 
-/*===COR NO SCROLL ====*/
-::-webkit-scrollbar{
-  background:var(--color-gray-600) !important; 
-  width: .7rem; 
-}
 
-::-webkit-scrollbar-thumb {
- background:var(--color-blue-900) !important; 
- border-radius: .7rem;
-}

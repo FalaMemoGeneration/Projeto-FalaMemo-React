@@ -5,7 +5,6 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
 import { addToken } from "../../store/tokens/actions";
@@ -57,19 +56,21 @@ function Login() {
       alignItems="center"
     >
       <Grid
-        xs={5}
-        className="imagem">
+        xs={4}
+        className="grid-logo">
 
-          <div className="frase">
+          <Box className="logo">
+             <img src='https://i.imgur.com/URiYwTB.png' alt="" />
             <Typography  align="inherit">
               Compartilhe suas experiências. 
               Dê voz às <br /> minorias no FalaMemo
             </Typography>
-          </div>
+          </Box>
+
       </Grid>
 
 
-      <Grid alignItems="center" xs={7} className="boxLogin" >
+      <Grid alignItems="center" xs={8} className="boxLogin" >
         <div className="rectangle">
           <form onSubmit={onSubmit}>
             <TextField
