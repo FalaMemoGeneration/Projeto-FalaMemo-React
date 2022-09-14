@@ -1,6 +1,5 @@
 import "./Menu.css";
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@material-ui/core/IconButton";
@@ -35,15 +34,18 @@ export default function BasicMenu() {
 
   return (
     <div>
-      <Button
+      <IconButton
+        edge="start"
+        color="inherit"
+        aria-label="open drawer"
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Dashboard
-      </Button>
+        <MenuIcon />
+      </IconButton>
 
       <Menu
         id="basic-menu"
@@ -59,11 +61,25 @@ export default function BasicMenu() {
             Home
           </Link>
         </MenuItem>
+
         <MenuItem onClick={handleClose}>
           <Link to="/postagens" className="text-decorator-none">
             Experiências
           </Link>
         </MenuItem>
+
+        <MenuItem onClick={handleClose}>
+          <Link to="/temas" className="text-decorator-none">
+            Empresas
+          </Link>
+        </MenuItem>
+
+        <MenuItem onClick={handleClose}>
+          <Link to="/formularioTema" className="text-decorator-none">
+            Cadastrar empresa
+          </Link>
+        </MenuItem>
+
         <MenuItem onClick={changeClick}>Sair</MenuItem>
       </Menu>
     </div>
