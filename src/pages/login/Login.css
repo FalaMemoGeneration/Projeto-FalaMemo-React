@@ -1,15 +1,22 @@
-.imagem {
-  background-image: url(../../assets/logogrande.svg);
-  background-repeat: no-repeat;
+.grid-logo {
   width: 100vh;
   min-height: 100vh;
-  background-size: 256px;
-  background-position: center 34%;
+  margin: 0 auto !important;
+}
+
+.logo {
+  width: 90%;
+  align-items: center;
+  margin: 12rem 0 0 9rem !important;
+}
+
+.logo img {
+  width: 60%;
 }
 
 .rectangle {
-  width: 420px;
-  height: 380px;
+  width: 520px;
+  height: 400px;
   background-color: var(--color-gray-02)!important;
   padding: 2rem 2rem ;
   border-radius: 6px ;
@@ -17,7 +24,8 @@
 
 .boxLogin {
   flex-basis:  0 !important;
-  margin: 0 auto !important;
+  margin: 0 9rem;
+  /* margin: 0 auto !important; */
 }
 
 .btnEntrar {
@@ -48,18 +56,26 @@
   color: var(--color-white) !important;
   border-radius:4px !important;
   text-transform: uppercase !important;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 2px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+
+  transition-duration: 0.25s, 0.25s, 0.25s;
+  transition-delay: 0s, 0s, 0s;
+  transition-property: background-color, box-shadow, border;
+}
+
+.btnCadastrar:hover {
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
 
 
 .input {
   background: var(--color-white-01) !important;
-  border: none !important;
-  outline: 0 !important;
+  border-radius: 6px !important;
 }
 
 
-.frase {
+/* .frase {
   position: absolute;
   bottom: 36%;
   left: 11.3%;
-}
+} */
