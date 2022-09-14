@@ -8,6 +8,9 @@ import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import './Home.css'
 
+
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+
 function Home() {
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -27,9 +30,28 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        className="container"
       >
-        <Grid alignItems="center" item xs={6}>
+        <div className="container">
+          <Grid direction="row" className='hank'>
+            <Typography className='title'>
+            <TrendingUpIcon className='upicon' /> Melhores Empresas
+            </Typography>
+
+            <Grid direction='row'>
+              <Box className='box-hank'> 
+                {/* <img src="https://images.pexels.com/photos/2235130/pexels-photo-2235130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /> */}
+                <Typography>
+                Albuquerque e cia
+                </Typography>
+
+              </Box>
+              <Box className='box-hank'> </Box>
+              <Box className='box-hank'> </Box>
+            </Grid>
+          </Grid>
+
+        </div>
+        {/* <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
             <Typography
               variant="h3"
@@ -73,7 +95,7 @@ function Home() {
         </Grid>
         <Grid xs={12} className="postagens">
           <TabPostagem />
-        </Grid>
+        </Grid> */}
       </Grid>
     </>
   );
