@@ -1,0 +1,13 @@
+.regras-container{
+    background-color: var(--color-white);
+}
+
+.regras-title{
+    font-weight: bold !important;
+    color: var(--color-black);
+}
+
+.regras-conteudo{
+    text-align: justify !important;
+    color: var(--color-black);
+}
