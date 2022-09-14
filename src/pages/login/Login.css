@@ -1,13 +1,18 @@
+.grid-login {
+  margin: 4rem auto;
+  height: 450px;
+}
+
 .grid-logo {
-  width: 100vh;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0 auto !important;
 }
 
 .logo {
   width: 90%;
   align-items: center;
-  margin: 12rem 0 0 9rem !important;
+  margin: 6rem 0 0 9rem !important;
 }
 
 .logo img {
@@ -15,8 +20,9 @@
 }
 
 .rectangle {
-  width: 520px;
-  height: 400px;
+  width: 500px;
+  height: 390px;
+  margin: 4rem auto;
   background-color: var(--color-gray-02)!important;
   padding: 2rem 2rem ;
   border-radius: 6px ;
