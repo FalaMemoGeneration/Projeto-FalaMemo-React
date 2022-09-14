@@ -14,7 +14,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import BasicMenu from "./Menu/Menu";
-import NavbarLogo from "./NavbarLogo/NavbarLogo";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -119,8 +118,6 @@ function Navbar() {
         </AppBar>
       </div>
     );
-  } else {
-    return <>{NavbarLogo}</>;
   }
 
   return <>{navbarComponent}</>;
