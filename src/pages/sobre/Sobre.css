@@ -1,33 +1,29 @@
 .sobre-container{
-    background-color: #f7f7f7;
+    background-color: var(--color-white);
 }
 
 .sobre-title{
-    font-family: "Roboto" !important;
     font-weight: bold !important;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .sobre-conteudo{
-    font-family: "Roboto" !important;
     text-align: justify !important;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .nome-integrante{
-    font-family: "Roboto" !important;
     font-weight: bold !important;
-    color: #000000;
+    color: var(--color-black);
 }
 
 .sobre-integrante{
-    font-family: "Roboto" !important;
-    color: #000000;
+    color: var(--color-black);
     text-align: justify;
 }
 
 .sobre-background{
-background-color: #dedede !important;
+background-color: var(--color-gray-02) !important;
 width: 1489px !important;
 height: 342px !important;
 left: 0px !important;
@@ -35,5 +31,77 @@ top: 1214px !important;
 }
 
 .sobre-icons{
-    color: #000000 !important;
+    color: var(--color-black) !important;
+}
+
+.sobre-imagem{
+    background-image: url(../../assets/logogrande.svg);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 70vh;
+    background-size: 556px;
+    background-position: center;
+}
+
+.img-Amanda{
+    background-image: url(../../assets/amanda.jpeg);
+    background-repeat: no-repeat;
+    width: 50vh;
+    min-height: 50vh;
+    background-size: 256px;
+    background-position: center;
+}
+
+.img-Fernando{
+    background-image: url(../../assets/fernando.jpeg);
+    background-repeat: no-repeat;
+    width: 50vh;
+    min-height: 50vh;
+    background-size: 256px;
+    background-position: center;
+}
+
+.img-Filipe{
+    background-image: url(../../assets/filipe.jpeg);
+    background-repeat: no-repeat;
+    width: 50vh;
+    min-height: 50vh;
+    background-size: 256px;
+    background-position: center;
+}
+
+.img-Ingrid{
+    background-image: url(../../assets/ingrid.jpeg);
+    background-repeat: no-repeat;
+    width: 50vh;
+    min-height: 50vh;
+    background-size: 256px;
+    background-position: center;
+}
+
+.img-Jeff{
+    background-image: url(../../assets/jeff.jpeg);
+    background-repeat: no-repeat;
+    width: 50vh;
+    min-height: 50vh;
+    background-size: 256px;
+    background-position: center;
+}
+
+.img-Maria{
+    background-image: url(../../assets/maria.jpeg);
+    background-repeat: no-repeat;
+    width: 50vh;
+    min-height: 50vh;
+    background-size: 256px;
+    background-position: center;
+}
+
+.img-Victoria{
+    background-image: url(../../assets/victoria.jpeg);
+    background-repeat: no-repeat;
+    width: 50vh;
+    min-height: 50vh;
+    background-size: 256px;
+    background-position: center;
 }

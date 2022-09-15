@@ -1,10 +1,9 @@
-import { Grid, TextField, Typography, Button } from "@material-ui/core";
+import { Grid, TextField, Typography, Button, GridList } from "@material-ui/core";
 import { Box } from "@mui/material";
 
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
@@ -33,7 +32,7 @@ function Login() {
 
   useEffect(() => {
     if (token !== "") {
-      dispatch(addToken(token))
+      dispatch(addToken(token));
       navigate("/home");
     }
   }, [token]);
@@ -50,20 +49,31 @@ function Login() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid alignItems="center" xs={6}>
-        <Box paddingX={20}>
-          <form onSubmit={onSubmit}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-              className="color-weight"
-            >
-              Entrar
+    <Grid
+      container
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+      className="grid-login"
+    >
+      <Grid
+        xs={4}
+        className="grid-logo">
+
+          <Box className="logo">
+             <img src='https://i.imgur.com/URiYwTB.png' alt="" />
+            <Typography  align="inherit">
+              Compartilhe suas experiências. 
+              Dê voz às <br /> minorias no FalaMemo
             </Typography>
+          </Box>
+
+      </Grid>
+
+
+      <Grid alignItems="center" xs={8} className="boxLogin" >
+        <div className="rectangle">
+          <form onSubmit={onSubmit}>
             <TextField
               value={userLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -71,7 +81,7 @@ function Login() {
               label="Usuário"
               variant="outlined"
               name="usuario"
-              margin="normal"
+              className="input"
               fullWidth
             />
             <TextField
@@ -83,45 +93,34 @@ function Login() {
               name="senha"
               margin="normal"
               type="password"
+              className="input"
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" className="botao">
-                Logar
+              <Button type="submit" variant="contained" className="btnEntrar">
+                Entrar
               </Button>
             </Box>
           </form>
-          <Box display="flex" justifyContent="center" marginTop={2}>
-            <Box marginRight={1}>
-              <Typography variant="subtitle1" gutterBottom align="center">
-                Não tem uma conta?
-              </Typography>
-            </Box>
-            <Link to="/cadastro">
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                align="center"
-                className="color-weight"
-              >
-                Cadastre-se
+          <Box display="flex" justifyContent="center" marginTop={2} marginBottom={4}>
+            <Link to="/" >
+              <Typography variant="subtitle1" gutterBottom align="center" className="link-senha">
+                Esqueceu a senha?
               </Typography>
             </Link>
           </Box>
-        </Box>
+          <Link to="/cadastro" className="text-decoretor-none">
+            <Typography
+              variant="subtitle1"
+              gutterBottom
+              align="center"
+              className="btnCadastrar"
+            >
+             Crie uma conta
+            </Typography>
+          </Link>
+        </div>
       </Grid>
-      <Grid
-        xs={6}
-        className="imagem"
-        style={{
-          backgroundImage: `url(https://i.imgur.com/7rhgzoN.jpg)`,
-          backgroundRepeat: "no-repeat",
-          width: "100vh",
-          minHeight: "100vh",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></Grid>
     </Grid>
   );
 }

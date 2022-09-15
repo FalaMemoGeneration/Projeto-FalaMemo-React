@@ -1,0 +1,87 @@
+.grid-login {
+  margin: 4rem auto;
+  height: 450px;
+}
+
+.grid-logo {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto !important;
+}
+
+.logo {
+  width: 90%;
+  align-items: center;
+  margin: 6rem 0 0 9rem !important;
+}
+
+.logo img {
+  width: 60%;
+}
+
+.rectangle {
+  width: 500px;
+  height: 390px;
+  margin: 4rem auto;
+  background-color: var(--color-gray-02)!important;
+  padding: 2rem 2rem ;
+  border-radius: 6px ;
+}
+
+.boxLogin {
+  flex-basis:  0 !important;
+  margin: 0 9rem;
+  /* margin: 0 auto !important; */
+}
+
+.btnEntrar {
+  background: var(--color-blue-btn) !important;
+  color: var(--color-white) !important;
+  font-size: 1rem !important;
+}
+
+.btnEntrar, .btnCadastrar {
+  width: 100% !important;
+  height: 45px !important;
+  padding: 10px!important;
+  font-weight: 600 !important;
+  letter-spacing: 1.2 !important;
+}
+
+.link-senha {
+  color: var(--color-black-10) !important;
+}
+
+.text-decoretor-none {
+  text-decoration: none;
+}
+
+
+.btnCadastrar {
+  background: var(--color-red-btn) !important;
+  color: var(--color-white) !important;
+  border-radius:4px !important;
+  text-transform: uppercase !important;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 2px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+
+  transition-duration: 0.25s, 0.25s, 0.25s;
+  transition-delay: 0s, 0s, 0s;
+  transition-property: background-color, box-shadow, border;
+}
+
+.btnCadastrar:hover {
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
+
+.input {
+  background: var(--color-white-01) !important;
+  border-radius: 6px !important;
+}
+
+
+/* .frase {
+  position: absolute;
+  bottom: 36%;
+  left: 11.3%;
+} */

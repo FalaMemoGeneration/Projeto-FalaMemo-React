@@ -1,0 +1,50 @@
+.cadastro-form {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.cadastro-container {
+  background-color: var(--color-blue-05);
+  margin-top: 4rem;
+}
+
+.cadastro-grid {
+  background-color: var(--color-white);
+  padding: 40px !important;
+  border-radius: 6px;
+}
+
+.cadastro-h3 {
+  padding-top: 20px !important;
+  color: var(--color-blue-01) !important;
+}
+
+.btnCancelar {
+  background: var(--color-blue-btn) !important;
+  color: var(--color-white) !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  width: 40% !important;
+  height: 45px !important;
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+  margin-left: 10px !important;
+}
+
+.btnCadastrar2 {
+  background: var(--color-red-btn) !important;
+  color: var(--color-white) !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  width: 40% !important;
+  height: 45px !important;
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+  margin-right: 10px !important;
+}
+
+.text-decorator-none {
+  text-decoration: none !important;
+}

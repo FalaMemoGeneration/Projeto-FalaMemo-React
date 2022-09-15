@@ -2,8 +2,10 @@ import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import NavbarLogo from "../../components/static/Navbar/NavbarLogo/NavbarLogo";
 import User from "../../models/User";
 import { cadastroUsuario } from "../../services/Service";
+import './CadastroUsuario.css';
 
 function CadastroUsuario() {
   let navigate = useNavigate();
@@ -59,25 +61,28 @@ function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid item xs={6}></Grid>
-      <Grid item xs={6} alignItems="center">
-        <Box>
-          <form onSubmit={onSubmit}>
-            <Typography
+    <Grid container direction="column" justifyContent="center" alignItems="center" className="cadastro-container">
+      <Grid item xs={2}></Grid>
+      <Typography
               variant="h3"
               gutterBottom
               color={"textPrimary"}
               component="h3"
               align="center"
+              className="cadastro-h3"
             >
               Cadastrar
             </Typography>
+
+      <Grid item xs={6} alignItems="center" className="cadastro-grid">
+
+        <Box>
+          <form onSubmit={onSubmit} className="cadastro-form">
             <TextField
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
-              label="nome"
+              label="Nome*"
               variant="outlined"
               name="nome"
               margin="normal"
@@ -87,7 +92,7 @@ function CadastroUsuario() {
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="e-mail"
+              label="Email*"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -98,7 +103,7 @@ function CadastroUsuario() {
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
-              label="senha"
+              label="Senha*"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -111,7 +116,7 @@ function CadastroUsuario() {
                 confirmarSenhaHandle(e)
               }
               id="confirmarSenha"
-              label="confirmarSenha"
+              label="Confirmar senha*"
               variant="outlined"
               name="confirmarSenha"
               margin="normal"
@@ -122,7 +127,7 @@ function CadastroUsuario() {
               value={user.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="foto"
-              label="url da foto"
+              label="Url da foto"
               variant="outlined"
               name="foto"
               margin="normal"
@@ -152,7 +157,7 @@ function CadastroUsuario() {
               value={user.genero}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="genero"
-              label="genero"
+              label="Gênero"
               variant="outlined"
               name="genero"
               margin="normal"
@@ -162,7 +167,7 @@ function CadastroUsuario() {
               value={user.orientacao}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="orientacao"
-              label="orientacao"
+              label="Orientação"
               variant="outlined"
               name="orientacao"
               margin="normal"
@@ -172,21 +177,21 @@ function CadastroUsuario() {
               value={user.pcd}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="pcd"
-              label="pcd"
+              label="Pessoa com deficiência?"
               variant="outlined"
               name="pcd"
               margin="normal"
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
+            <Button type="submit" variant="contained" className="btnCadastrar2">
+                Cadastrar
+              </Button>
               <Link to="/login" className="text-decorator-none">
-                <Button variant="contained" className="botaoCancelar">
+                <Button variant="contained" className="btnCancelar">
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" variant="contained">
-                Cadastrar
-              </Button>
             </Box>
           </form>
         </Box>
