@@ -1,50 +1,65 @@
-import { Grid, TextField, Typography, Button, GridList } from "@material-ui/core";
-import { Box } from "@mui/material";
-
-import { ChangeEvent, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-
-import UserLogin from "../../models/UserLogin";
-import { login } from "../../services/Service";
-import { addToken } from "../../store/tokens/actions";
-import "./Login.css";
+import { ChangeEvent, useEffect, useState } from "react"
+import "./Login.css"
+import { Grid, TextField, Typography, Button, GridList } from "@material-ui/core"
+import { Box } from "@mui/material"
+import { useDispatch } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
+import UserLogin from "../../models/UserLogin"
+import { login } from "../../services/Service"
+import { addToken } from "../../store/tokens/actions"
 
 function Login() {
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
+  let navigate = useNavigate()
+  const dispatch = useDispatch()
 
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState("")
 
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
     senha: "",
     token: "",
-  });
+  })
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
       ...userLogin,
       [e.target.name]: e.target.value,
-    });
+    })
   }
 
   useEffect(() => {
     if (token !== "") {
-      dispatch(addToken(token));
-      navigate("/home");
+      dispatch(addToken(token))
+      navigate("/home")
     }
-  }, [token]);
+  }, [token])
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      await login(`/usuarios/logar`, userLogin, setToken);
-      alert("Usuário logado com sucesso!");
+      await login(`/usuarios/logar`, userLogin, setToken)
+      toast.success("Usuário logado com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
     } catch (error) {
-      alert("Usuário não existe. Erro ao logar!");
+      toast.error("Usuário não existe. Erro ao logar!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
     }
   }
 
@@ -60,13 +75,13 @@ function Login() {
         xs={4}
         className="grid-logo">
 
-          <Box className="logo">
-             <img src='https://i.imgur.com/URiYwTB.png' alt="" />
-            <Typography  align="inherit">
-              Compartilhe suas experiências. 
-              Dê voz às <br /> minorias no FalaMemo
-            </Typography>
-          </Box>
+        <Box className="logo">
+          <img src="https://i.imgur.com/URiYwTB.png" alt="" />
+          <Typography align="inherit">
+            Compartilhe suas experiências.
+            Dê voz às <br /> minorias no FalaMemo
+          </Typography>
+        </Box>
 
       </Grid>
 
@@ -116,13 +131,13 @@ function Login() {
               align="center"
               className="btnCadastrar"
             >
-             Crie uma conta
+              Crie uma conta
             </Typography>
           </Link>
         </div>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default Login;
+export default Login

@@ -1,0 +1,24 @@
+.btnModal {
+  display: inline-block;
+  margin: 1rem 9rem 1rem 1rem;
+  width: 680px;
+  padding: 0.600rem 0;
+  border: none;
+  background:var(--color-white) ;
+  border-radius: 6px;
+}
+
+.btnModal:hover {
+  cursor: pointer;
+}
+
+
+
+.btnModal span {
+  color: #B3B3B3 !important;
+  font-family: 'Roboto';
+  font-style: normal !important;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+}

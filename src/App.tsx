@@ -1,28 +1,34 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import Footer from './components/static/Footer/Footer';
-import Navbar from './components/static/Navbar/Navbar';
-import Login from './pages/login/Login';
-import Sobre from './pages/sobre/Sobre';
-import Home from './pages/home/Home';
-import Regras from './pages/regras/Regras';
-import Termos from './pages/termos/Termos';
-import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
-import ListaTema from './components/temas/listaTema/ListaTema';
-import ListarPostagem from './components/postagens/listarPostagem/ListarPostagem';
-import CadastrarTema from './components/temas/cadastrarTema/CadastrarTema';
-import CadastrarPostagem from './components/postagens/cadastrarPostagem/CadastrarPostagem';
-import DeletarPostagem from './components/postagens/deletarPostagem/deletarPostagem';
-import DeletarTema from './components/temas/deletarTema/DeletarTema';
-import store from './store/store';
+import "./App.css"
+import "react-toastify/dist/ReactToastify.css"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { Provider } from "react-redux"
+import Footer from "./components/static/Footer/Footer"
+import Navbar from "./components/static/Navbar/Navbar"
+import Login from "./pages/login/Login"
+import Sobre from "./pages/sobre/Sobre"
+import Home from "./pages/home/Home"
+import Regras from "./pages/regras/Regras"
+import Termos from "./pages/termos/Termos"
+import CadastroUsuario from "./pages/cadastroUsuario/CadastroUsuario"
+import ListarTema from "./components/temas/listarTema/ListarTema"
+import ListarPostagem from "./components/postagens/listarPostagem/ListarPostagem"
+import CadastrarTema from "./components/temas/cadastrarTema/CadastrarTema"
+import CadastrarPostagem from "./components/postagens/cadastrarPostagem/CadastrarPostagem"
+import DeletarTema from "./components/temas/deletarTema/DeletarTema"
+import store from "./store/store"
+import { ToastContainer } from "react-toastify"
+import NavbarLogo from "./components/static/Navbar/NavbarLogo/NavbarLogo"
+import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem"
+
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
       <Router>
         <Navbar />
-        <div style={{ minHeight: '100vh' }}>
+        <NavbarLogo />
+        <div style={{ minHeight: "100vh" }}>
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
@@ -32,7 +38,7 @@ function App() {
             <Route path="/regras" element={<Regras />} />
             <Route path="/termos" element={<Termos />} />
 
-            <Route path="/temas" element={<ListaTema />} />
+            <Route path="/temas" element={<ListarTema />} />
             <Route path="/postagens" element={<ListarPostagem />} />
 
             <Route path="/formularioTema" element={<CadastrarTema />} />
@@ -52,4 +58,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

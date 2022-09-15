@@ -1,15 +1,15 @@
-import { Button, Grid, TextField, Typography } from "@material-ui/core";
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import React, { ChangeEvent, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import NavbarLogo from "../../components/static/Navbar/NavbarLogo/NavbarLogo";
-import User from "../../models/User";
-import { cadastroUsuario } from "../../services/Service";
-import './CadastroUsuario.css';
+import { Button, Grid, TextField, Typography } from "@material-ui/core"
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material"
+import React, { ChangeEvent, useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
+import User from "../../models/User"
+import { cadastroUsuario } from "../../services/Service"
+import "./CadastroUsuario.css"
 
 function CadastroUsuario() {
-  let navigate = useNavigate();
-  const [confirmarSenha, setConfirmarSenha] = useState<String>("");
+  let navigate = useNavigate()
+  const [confirmarSenha, setConfirmarSenha] = useState<String>("")
   const [user, setUser] = useState<User>({
     id: 0,
     nome: "",
@@ -19,7 +19,7 @@ function CadastroUsuario() {
     genero: "",
     orientacao: "",
     pcd: false,
-  });
+  })
 
   const [userResult, setUserResult] = useState<User>({
     id: 0,
@@ -30,33 +30,49 @@ function CadastroUsuario() {
     genero: "",
     orientacao: "",
     pcd: false,
-  });
+  })
 
   useEffect(() => {
     if (userResult.id != 0) {
-      navigate("/login");
+      navigate("/login")
     }
-  }, [userResult]);
+  }, [userResult])
 
   function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
-    setConfirmarSenha(e.target.value);
+    setConfirmarSenha(e.target.value)
   }
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
-    });
+    })
   }
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault()
     if (confirmarSenha == user.senha && user.senha.length >= 8) {
-      cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      alert("Usuário cadastrado com sucesso");
+      cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+      toast.success("Usuário cadastrado com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
     } else {
-      alert("Dados incorretos. Favor verificar as informações de cadastro.");
-      setUser({ ...user, senha: "" });
-      setConfirmarSenha("");
+      toast.error("Dados incorretos. Favor verificar as informações de cadastro!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
+      setUser({ ...user, senha: "" })
+      setConfirmarSenha("")
     }
   }
 
@@ -64,15 +80,15 @@ function CadastroUsuario() {
     <Grid container direction="column" justifyContent="center" alignItems="center" className="cadastro-container">
       <Grid item xs={2}></Grid>
       <Typography
-              variant="h3"
-              gutterBottom
-              color={"textPrimary"}
-              component="h3"
-              align="center"
-              className="cadastro-h3"
-            >
-              Cadastrar
-            </Typography>
+        variant="h3"
+        gutterBottom
+        color={"textPrimary"}
+        component="h3"
+        align="center"
+        className="cadastro-h3"
+      >
+        Cadastrar
+      </Typography>
 
       <Grid item xs={6} alignItems="center" className="cadastro-grid">
 
@@ -184,7 +200,7 @@ function CadastroUsuario() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-            <Button type="submit" variant="contained" className="btnCadastrar2">
+              <Button type="submit" variant="contained" className="btnCadastrar2">
                 Cadastrar
               </Button>
               <Link to="/login" className="text-decorator-none">
@@ -197,7 +213,7 @@ function CadastroUsuario() {
         </Box>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default CadastroUsuario;
+export default CadastroUsuario
