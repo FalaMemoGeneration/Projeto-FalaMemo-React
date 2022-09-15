@@ -1,38 +1,79 @@
 .container {
   width: 100vw;
   min-height: 100vh;
-  background-color: blueviolet;
 }
 
 .hank {
-  padding: 7rem 4rem ;
+  padding: 6rem 10rem ;
   background-color: var(--color-gray-04);
   width: 100%;
-  height: 600px;
+  height: 500px;
   margin: 0 auto;
 }
 
 .hank .title {
   text-align: center;
   color: var(--color-gray-09) !important;
-  font-size: 30px !important;
+  font-size: 35px !important;
+  font-weight: 400;
+  line-height: 58px;
+
+  margin-bottom: 2rem !important;
+}
+
+.container-hank {
+  width: 100%;
+  display: flex;
 }
 
 .upicon {
-  color: rgb(189, 22, 22) !important;
+  color: #E63946 !important;
   font-size: 2rem !important;
   margin: -8px 0;
-
 }
 
 .box-hank {
-  width: 200px;
-  height:100px;
+  width: 170px;
+  height: 170px;
+  padding: 1rem;
   background-color: var(--color-white);
-
+  border-radius: 6px;
+  margin: 0 auto !important;
 }
 
 .box-hank img {
-  width: 200px;
-  height: 200px;
+  width: 90px;
+  height: 65px;
+  margin: 0 1.6rem 0.689rem 1.6rem;
+  border-radius: 3px;
+}
+
+.title-hank {
+  color: var(--color-black);
+  text-align: center;
+  padding: 2px;
+}
+
+.star {
+  /* width: 40px; */
+  text-align: center !important;
+  color: #E63946;
+}
+
+.star:nth-child(n) {
+  font-size: 7px !important;
+}
+
+.div-veja {
+  background-color: #E63946;
+  width: 400px ;
+  margin: 3rem auto;
+}
+
+.btnVeja {
+  width: 100% !important;
+  height: 45px !important;
+  padding: 10px!important;
+  font-weight: 600 !important;
+  letter-spacing: 1.2 !important;
 }
