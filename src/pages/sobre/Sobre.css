@@ -1,107 +1,41 @@
-.sobre-container{
+.sobre-container {
     background-color: var(--color-white);
 }
 
-.sobre-title{
+.sobre-title {
     font-weight: bold !important;
     color: var(--color-black);
 }
 
-.sobre-conteudo{
+.sobre-conteudo {
     text-align: justify !important;
     color: var(--color-black);
 }
 
-.nome-integrante{
+.nome-integrante {
     font-weight: bold !important;
     color: var(--color-black);
 }
 
-.sobre-integrante{
+.sobre-integrante {
     color: var(--color-black);
     text-align: justify;
 }
 
-.sobre-background{
-background-color: var(--color-gray-02) !important;
-width: 1489px !important;
-height: 342px !important;
-left: 0px !important;
-top: 1214px !important;
+.sobre-background {
+    background-color: var(--color-gray-02) !important;
+    width: 1489px !important;
+    left: 0px !important;
+    top: 1214px !important;
 }
 
-.sobre-icons{
+.sobre-icons {
     color: var(--color-black) !important;
 }
 
-.sobre-imagem{
-    background-image: url(../../assets/logogrande.svg);
-    background-repeat: no-repeat;
-    width: 100vh;
-    min-height: 70vh;
-    background-size: 556px;
-    background-position: center;
-}
-
-.img-Amanda{
-    background-image: url(../../assets/amanda.jpeg);
-    background-repeat: no-repeat;
-    width: 50vh;
-    min-height: 50vh;
-    background-size: 256px;
-    background-position: center;
-}
-
-.img-Fernando{
-    background-image: url(../../assets/fernando.jpeg);
-    background-repeat: no-repeat;
-    width: 50vh;
-    min-height: 50vh;
-    background-size: 256px;
-    background-position: center;
-}
-
-.img-Filipe{
-    background-image: url(../../assets/filipe.jpeg);
-    background-repeat: no-repeat;
-    width: 50vh;
-    min-height: 50vh;
-    background-size: 256px;
-    background-position: center;
-}
-
-.img-Ingrid{
-    background-image: url(../../assets/ingrid.jpeg);
-    background-repeat: no-repeat;
-    width: 50vh;
-    min-height: 50vh;
-    background-size: 256px;
-    background-position: center;
-}
-
-.img-Jeff{
-    background-image: url(../../assets/jeff.jpeg);
-    background-repeat: no-repeat;
-    width: 50vh;
-    min-height: 50vh;
-    background-size: 256px;
-    background-position: center;
-}
-
-.img-Maria{
-    background-image: url(../../assets/maria.jpeg);
-    background-repeat: no-repeat;
-    width: 50vh;
-    min-height: 50vh;
-    background-size: 256px;
-    background-position: center;
-}
-
-.img-Victoria{
-    background-image: url(../../assets/victoria.jpeg);
-    background-repeat: no-repeat;
-    width: 50vh;
-    min-height: 50vh;
-    background-size: 256px;
-    background-position: center;
+.img {
+    width: 20vh;
+    min-height: 20vh;
+    /* background-size: 256px;
+    background-position: center; */
 }
