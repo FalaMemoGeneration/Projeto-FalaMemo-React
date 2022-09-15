@@ -14,11 +14,11 @@ import ListarTema from "./components/temas/listarTema/ListarTema"
 import ListarPostagem from "./components/postagens/listarPostagem/ListarPostagem"
 import CadastrarTema from "./components/temas/cadastrarTema/CadastrarTema"
 import CadastrarPostagem from "./components/postagens/cadastrarPostagem/CadastrarPostagem"
+import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem"
 import DeletarTema from "./components/temas/deletarTema/DeletarTema"
 import store from "./store/store"
 import { ToastContainer } from "react-toastify"
 import NavbarLogo from "./components/static/Navbar/NavbarLogo/NavbarLogo"
-import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem"
 
 
 function App() {
