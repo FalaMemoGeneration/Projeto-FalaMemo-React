@@ -1,56 +1,74 @@
-import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import Tema from '../../../models/Tema';
-import { buscaId, deleteId } from '../../../services/Service';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Button, Card, CardActions, CardContent, Typography } from "@material-ui/core"
+import { Box } from "@mui/material"
+import React, { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { useNavigate, useParams } from "react-router-dom"
+import { toast } from "react-toastify"
+import Tema from "../../../models/Tema"
+import { buscaId, deleteId } from "../../../services/Service"
+import { TokenState } from "../../../store/tokens/tokensReducer"
 
 function DeletarTema() {
-  let navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
+
+  let navigate = useNavigate()
+  const { id } = useParams<{ id: string }>()
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
+  )
   const [tema, setTema] = useState<Tema>({
     id: 0,
     descricao: "",
-  });
+  })
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
-      navigate("/login");
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
+      navigate("/login")
     }
-  }, [token]);
+  }, [token])
 
   useEffect(() => {
     if (id !== undefined) {
-      findById(id);
+      findById(id)
     }
-  }, [id]);
+  }, [id])
 
   async function findById(id: string) {
-    buscaId(`/tema/${id}`, setTema, {
+    buscaId(`/temas/${id}`, setTema, {
       headers: {
         Authorization: token,
       },
-    });
+    })
   }
 
   function sim() {
-    navigate('/temas')
+    navigate("/temas")
     deleteId(`/temas/${id}`, {
       headers: {
-        'Authorization': token
+        "Authorization": token
       }
-    });
-    alert('Tema deletado com sucesso.');
+    })
+    toast.success("Tema deletado com sucesso!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+    })
   }
 
   function nao() {
-    navigate('/temas')
+    navigate("/temas")
   }
 
   return (
@@ -75,7 +93,7 @@ function DeletarTema() {
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button onClick={nao} variant="contained" color="secondary" className='btn'>
+                <Button onClick={nao} variant="contained" color="secondary" className="btn">
                   Não
                 </Button>
               </Box>
@@ -84,6 +102,6 @@ function DeletarTema() {
         </Card>
       </Box>
     </>
-  );
+  )
 }
 export default DeletarTema

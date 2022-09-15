@@ -5,12 +5,12 @@ export interface TokenState {
 }
 
 const initialState = {
-    tokens: ''
+    tokens: ""
 }
 
 export const tokenReducer = (state: TokenState = initialState, action: Action) => {
     switch (action.type) {
-        case 'ADD_TOKEN': {
+        case "ADD_TOKEN": {
             return { tokens: action.payload }
         }
         default:

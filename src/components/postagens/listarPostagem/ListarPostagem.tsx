@@ -1,37 +1,46 @@
-import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
-import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import Postagem from '../../../models/Postagem';
-import { busca } from '../../../services/Service';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Button, Card, CardActions, CardContent, Typography } from "@material-ui/core"
+import { Box } from "@mui/material"
+import React, { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
+import Postagem from "../../../models/Postagem"
+import { busca } from "../../../services/Service"
+import { TokenState } from "../../../store/tokens/tokensReducer"
 
 function ListarPostagem() {
-  const [posts, setPosts] = useState<Postagem[]>([]);
+  const [posts, setPosts] = useState<Postagem[]>([])
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
-  let navigate = useNavigate();
+  )
+  let navigate = useNavigate()
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
-      navigate("/login");
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
+      navigate("/login")
     }
-  }, [token]);
+  }, [token])
 
   async function getPost() {
     await busca("/postagens", setPosts, {
       headers: {
         Authorization: token,
       },
-    });
+    })
   }
 
   useEffect(() => {
-    getPost();
-  }, [posts.length]);
+    getPost()
+  }, [posts.length])
 
   return (
     <>
@@ -90,7 +99,7 @@ function ListarPostagem() {
         </Box>
       ))}
     </>
-  );
+  )
 }
 
-export default ListarPostagem;
+export default ListarPostagem
