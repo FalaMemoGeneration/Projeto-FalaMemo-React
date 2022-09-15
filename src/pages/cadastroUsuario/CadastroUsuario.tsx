@@ -1,15 +1,27 @@
-import { Button, Grid, TextField, Typography } from "@material-ui/core"
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material"
-import React, { ChangeEvent, useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { toast } from "react-toastify"
-import User from "../../models/User"
-import { cadastroUsuario } from "../../services/Service"
-import "./CadastroUsuario.css"
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  FormLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import NavbarLogo from "../../components/static/Navbar/NavbarLogo/NavbarLogo";
+import User from "../../models/User";
+import { cadastroUsuario } from "../../services/Service";
+import "./CadastroUsuario.css";
 
 function CadastroUsuario() {
-  let navigate = useNavigate()
-  const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+  let navigate = useNavigate();
+  const [confirmarSenha, setConfirmarSenha] = useState<String>("");
   const [user, setUser] = useState<User>({
     id: 0,
     nome: "",
@@ -18,8 +30,8 @@ function CadastroUsuario() {
     foto: "",
     genero: "",
     orientacao: "",
-    pcd: false,
-  })
+    pcd: true,
+  });
 
   const [userResult, setUserResult] = useState<User>({
     id: 0,
@@ -29,29 +41,29 @@ function CadastroUsuario() {
     foto: "",
     genero: "",
     orientacao: "",
-    pcd: false,
-  })
+    pcd: true,
+  });
 
   useEffect(() => {
     if (userResult.id != 0) {
-      navigate("/login")
+      navigate("/login");
     }
-  }, [userResult])
+  }, [userResult]);
 
   function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
-    setConfirmarSenha(e.target.value)
+    setConfirmarSenha(e.target.value);
   }
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
-    })
+    });
   }
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
+    e.preventDefault();
     if (confirmarSenha == user.senha && user.senha.length >= 8) {
-      cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+      cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
       toast.success("Usuário cadastrado com sucesso!", {
         position: "top-right",
         autoClose: 2000,
@@ -59,29 +71,43 @@ function CadastroUsuario() {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        progress: undefined
-      })
+        progress: undefined,
+      });
     } else {
-      toast.error("Dados incorretos. Favor verificar as informações de cadastro!", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined
-      })
-      setUser({ ...user, senha: "" })
-      setConfirmarSenha("")
+      toast.error(
+        "Dados incorretos. Favor verificar as informações de cadastro!",
+        {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }
+      );
+      setUser({ ...user, senha: "" });
+      setConfirmarSenha("");
     }
   }
 
   return (
-    <Grid container direction="column" justifyContent="center" alignItems="center" className="cadastro-container">
+
+    <Grid
+      container
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      className="cadastro-container"
+    >
+      
+
+      <Grid item xs={6} alignItems="center" className="cadastro-grid">
       <Grid item xs={2}></Grid>
+      <Grid>
       <Typography
         variant="h3"
-        gutterBottom
+        // gutterBottom
         color={"textPrimary"}
         component="h3"
         align="center"
@@ -89,9 +115,7 @@ function CadastroUsuario() {
       >
         Cadastrar
       </Typography>
-
-      <Grid item xs={6} alignItems="center" className="cadastro-grid">
-
+      </Grid>
         <Box>
           <form onSubmit={onSubmit} className="cadastro-form">
             <TextField
@@ -151,23 +175,27 @@ function CadastroUsuario() {
               type="url"
             />
 
-            {/*<Box sx={{ minWidth: 120 }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Gênero</InputLabel>
+            {/* <Box sx={{ minWidth: 120 }}> */}
+            {/* <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Identidade de gênero</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="genero"
                   value={user.genero}
-                  label="genero"
+                  label="Identidade de gênero"
                   name="genero" 
                   onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 >
-                  <MenuItem>Ten</MenuItem>
-                  <MenuItem>Twenty</MenuItem>
-                  <MenuItem>Thirty</MenuItem>
+                  <MenuItem>Mulher cis</MenuItem>
+                  <MenuItem>Homem cis</MenuItem>
+                  <MenuItem>Mulher trans</MenuItem>
+                  <MenuItem>Homem trans</MenuItem>
+                  <MenuItem>Pessoa não-binária</MenuItem>
+                  <MenuItem>Pessoa agênero</MenuItem>
+                  <MenuItem>Prefiro não informar</MenuItem>
                 </Select>
-              </FormControl>
-            </Box>*/}
+              </FormControl> */}
+            {/* </Box> */}
 
             <TextField
               value={user.genero}
@@ -179,6 +207,7 @@ function CadastroUsuario() {
               margin="normal"
               fullWidth
             />
+
             <TextField
               value={user.orientacao}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -189,7 +218,29 @@ function CadastroUsuario() {
               margin="normal"
               fullWidth
             />
-            <TextField
+
+            <FormControl margin="normal">
+              <FormLabel id="demo-radio-buttons-group-label">É pessoa com deficiência?</FormLabel>
+              <RadioGroup
+                row
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="female"
+                name="radio-buttons-group"
+              >
+                <FormControlLabel
+                  value="sim"
+                  control={<Radio />}
+                  label="Sim"
+                />
+                <FormControlLabel
+                  value="nao"
+                  control={<Radio />}
+                  label="Não"
+                />
+              </RadioGroup>
+            </FormControl>
+
+            {/* <TextField
               value={user.pcd}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="pcd"
@@ -198,9 +249,14 @@ function CadastroUsuario() {
               name="pcd"
               margin="normal"
               fullWidth
-            />
+            /> */}
+
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" className="btnCadastrar2">
+              <Button
+                type="submit"
+                variant="contained"
+                className="btnCadastrar2"
+              >
                 Cadastrar
               </Button>
               <Link to="/login" className="text-decorator-none">
@@ -213,7 +269,7 @@ function CadastroUsuario() {
         </Box>
       </Grid>
     </Grid>
-  )
+  );
 }
 
-export default CadastroUsuario
+export default CadastroUsuario;

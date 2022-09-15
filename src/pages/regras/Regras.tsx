@@ -10,8 +10,8 @@ function Regras() {
         <Grid
           alignItems="flex-start"
           justifyContent="flex-start"
-          item xs={12}
-          padding={4}>
+          item xs={6}
+          padding={12}>
           <Box>
             <Typography className="regras-title" variant="h6">Regras da Comunidade</Typography>
           </Box>
