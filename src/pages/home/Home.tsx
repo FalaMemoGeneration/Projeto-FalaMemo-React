@@ -135,7 +135,7 @@ function Home() {
           </Grid>
 
         </div>
-        {/* <Grid alignItems="center" item xs={6}>
+        <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
             <Typography
               variant="h3"
@@ -162,7 +162,7 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
-            <Link to="/posts" className="text-decorator-none">
+            <Link to="/postagens" className="text-decorator-none">
               <Button variant="outlined" className="btn">
                 Ver Postagens
               </Button>
@@ -179,7 +179,7 @@ function Home() {
         </Grid>
         <Grid xs={12} className="postagens">
           <TabPostagem />
-        </Grid> */}
+        </Grid>
       </Grid>
     </>
   );
