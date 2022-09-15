@@ -8,6 +8,11 @@
   border-radius: 6px;
 }
 
+.btnModal:hover {
+  cursor: pointer;
+}
+
+
 
 .btnModal span {
   color: #B3B3B3 !important;
