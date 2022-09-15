@@ -4,6 +4,8 @@ import React from "react"
 import CloseIcon from "@material-ui/icons/Close"
 import CadastrarPostagem from "../cadastrarPostagem/CadastrarPostagem"
 
+import "./ModalPostagem.css" ;
+
 function getModalStyle() {
   const top = 50
   const left = 50
@@ -18,8 +20,13 @@ function getModalStyle() {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
+
       position: "absolute",
       width: 400,
+
+      position: 'absolute',
+      width: 500,
+
       backgroundColor: theme.palette.background.paper,
       border: "2px solid #000",
       boxShadow: theme.shadows[5],
@@ -44,7 +51,10 @@ function ModalPostagem() {
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <Box display="flex" justifyContent="flex-end" className="cursor">
+
         <CloseIcon onClick={handleClose} />
+
+        <CloseIcon onClick={handleClose}/>
 
       </Box>
 
@@ -55,10 +65,12 @@ function ModalPostagem() {
 
   return (
     <div>
-      <Button
-        variant="outlined"
+      <button
         className="btnModal"
-        onClick={handleOpen}>Nova Postagem</Button>
+        onClick={handleOpen}>
+          <span> Em qual empresa você está pensando? </span>
+        </button>
+
       <Modal
         open={open}
         onClose={handleClose}
