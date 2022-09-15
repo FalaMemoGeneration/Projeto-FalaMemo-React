@@ -1,12 +1,20 @@
 import { Button, Grid, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
+import StarIcon from '@material-ui/icons/Star';
+import StarHalfIcon from '@material-ui/icons/StarHalf';
+
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+
+
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import './Home.css'
+
+
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 
 function Home() {
   let navigate = useNavigate();
@@ -27,8 +35,106 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        className="container"
       >
+        <div className="container">
+          <Grid direction='row' className='hank' xs={12}>
+            <Typography className='title'>
+              <TrendingUpIcon className='upicon' /> Melhores Empresas
+            </Typography>
+
+            <div className='container-hank'>
+              <Box className='box-hank'> 
+                <img src="https://images.pexels.com/photos/2467277/pexels-photo-2467277.png?auto=compress&cs=tinysrgb&w=600" alt="" />
+                <Typography 
+                variant="subtitle1" 
+                className='title-hank'>
+                 Kiss
+                </Typography>
+
+                <Box className='star'>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                </Box>
+              </Box>
+              
+              <Box className='box-hank'> 
+                <img src="https://images.pexels.com/photos/2235130/pexels-photo-2235130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                <Typography 
+                variant="subtitle1" 
+                className='title-hank'>
+                Albuquerque e cia
+                </Typography>
+
+                <Box className='star'>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                </Box>
+              </Box>
+              <Box className='box-hank'> 
+                <img src="https://images.pexels.com/photos/430205/pexels-photo-430205.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                <Typography 
+                variant="subtitle1" 
+                className='title-hank'>
+                #Slack
+                </Typography>
+
+                <Box className='star'>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                </Box>
+              </Box>
+              <Box className='box-hank'> 
+                <img src="https://images.pexels.com/photos/1337386/pexels-photo-1337386.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                <Typography 
+                variant="subtitle1" 
+                className='title-hank'>
+                  Alphabet
+                </Typography>
+
+                <Box className='star'>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                </Box>
+              </Box>
+
+              <Box className='box-hank'> 
+                <img src="https://images.pexels.com/photos/9843280/pexels-photo-9843280.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                <Typography 
+                variant="subtitle1" 
+                className='title-hank'>
+                  Bergerson
+                </Typography>
+
+                <Box className='star'>
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarIcon />
+                  <StarHalfIcon />
+                </Box>
+              </Box>
+            </div>
+
+            <div className='div-veja'>
+              <Button variant="contained" className="btnVeja">
+                Veja mais empresas
+              </Button>
+            </div>
+          </Grid>
+
+        </div>
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
             <Typography
@@ -56,7 +162,7 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
-            <Link to="/posts" className="text-decorator-none">
+            <Link to="/postagens" className="text-decorator-none">
               <Button variant="outlined" className="btn">
                 Ver Postagens
               </Button>
