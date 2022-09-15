@@ -2,6 +2,7 @@ import { Button, Grid, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
+import Avatar from "@mui/material/Avatar";
 
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
@@ -133,6 +134,20 @@ function Home() {
               </Button>
             </div>
           </Grid>
+
+          <div className="campo-text">
+            <div>
+              <Avatar
+                  src="https://i.imgur.com/6OvsYjP.png"
+                  className="avatar-home"
+                />
+            </div>
+
+            <div>
+              <ModalPostagem />
+            </div>
+          </div>
+
 
         </div>
         {/* <Grid alignItems="center" item xs={6}>
