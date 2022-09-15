@@ -1,59 +1,78 @@
-import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from '@material-ui/core';
-import React, { ChangeEvent, useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import Postagem from '../../../models/Postagem';
-import Tema from '../../../models/Tema';
-import { busca, buscaId, post, put } from '../../../services/Service';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core"
+import React, { ChangeEvent, useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { useNavigate, useParams } from "react-router-dom"
+import { toast } from "react-toastify"
+import Postagem from "../../../models/Postagem"
+import Tema from "../../../models/Tema"
+import { busca, buscaId, post, put } from "../../../services/Service"
+import { TokenState } from "../../../store/tokens/tokensReducer"
 
 function CadastroPost() {
-  let navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
-  const [temas, setTemas] = useState<Tema[]>([]);
+  let navigate = useNavigate()
+  const { id } = useParams<{ id: string }>()
+  const [temas, setTemas] = useState<Tema[]>([])
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
+  )
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado.");
-      navigate("/login");
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
+      navigate("/login")
     }
-  }, [token]);
+  }, [token])
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
     descricao: "",
-  });
+  })
   const [postagem, setPostagem] = useState<Postagem>({
     id: 0,
     titulo: "",
     texto: "",
     avaliacao: 0,
-    tema: null
-  });
+    tema: null,
+    usuario: {
+      id: 1,
+      nome: "",
+      usuario: "",
+      foto: "",
+      genero: "",
+      orientacao: "",
+      pcd: false,
+      senha: ""
+    }
+  })
 
   useEffect(() => {
     setPostagem({
       ...postagem,
       tema: tema
-    });
-  }, [tema]);
+    })
+  }, [tema])
 
   useEffect(() => {
-    getTemas();
+    getTemas()
     if (id !== undefined) {
-      findByIdPostagem(id);
+      findByIdPostagem(id)
     }
-  }, [id]);
+  }, [id])
 
   async function getTemas() {
     await busca("/temas", setTemas, {
       headers: {
         Authorization: token,
       },
-    });
+    })
   }
 
   async function findByIdPostagem(id: string) {
@@ -61,7 +80,7 @@ function CadastroPost() {
       headers: {
         Authorization: token,
       },
-    });
+    })
   }
 
   function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
@@ -69,32 +88,48 @@ function CadastroPost() {
       ...postagem,
       [e.target.name]: e.target.value,
       tema: tema,
-    });
+    })
   }
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (id !== undefined) {
       put(`/postagens`, postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
-      });
-      alert("Postagem atualizada com sucesso!");
+      })
+      toast.success("Postagem atualizada com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
     } else {
       post(`/postagens`, postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
-      });
-      alert("Postagem cadastrada com sucesso!");
+      })
+      toast.success("Postagem cadastrada com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      })
     }
-    back();
+    back()
   }
 
   function back() {
-    navigate("/postagens");
+    navigate("/postagens")
   }
 
   return (
@@ -131,7 +166,7 @@ function CadastroPost() {
           fullWidth
         />
 
-<TextField
+        <TextField
           value={postagem.avaliacao}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
           id="avaliacao"
@@ -167,6 +202,6 @@ function CadastroPost() {
         </FormControl>
       </form>
     </Container>
-  );
+  )
 }
-export default CadastroPost;
+export default CadastroPost

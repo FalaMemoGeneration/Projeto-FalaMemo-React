@@ -1,36 +1,45 @@
-import "./Menu.css";
-import * as React from "react";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addToken } from "../../../../store/tokens/actions";
+import "./Menu.css"
+import * as React from "react"
+import Menu from "@mui/material/Menu"
+import MenuItem from "@mui/material/MenuItem"
+import IconButton from "@material-ui/core/IconButton"
+import MenuIcon from "@material-ui/icons/Menu"
+import { Link, useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { addToken } from "../../../../store/tokens/actions"
+import { toast } from "react-toastify"
 
 export default function BasicMenu() {
-  const dispatch = useDispatch();
-  let navigate = useNavigate();
+  const dispatch = useDispatch()
+  let navigate = useNavigate()
 
   function changeClick() {
-    handleClose();
-    goLogout();
+    handleClose()
+    goLogout()
   }
 
   function goLogout() {
-    dispatch(addToken(""));
-    alert("Você saiu!");
-    navigate("/login");
+    dispatch(addToken(""))
+    toast.info("Você saiu!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined
+  })
+    navigate("/login")
   }
 
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
   return (
     <div>
@@ -83,5 +92,5 @@ export default function BasicMenu() {
         <MenuItem onClick={changeClick}>Sair</MenuItem>
       </Menu>
     </div>
-  );
+  )
 }
