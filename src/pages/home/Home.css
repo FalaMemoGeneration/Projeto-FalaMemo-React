@@ -1,38 +1,85 @@
 .container {
   width: 100vw;
   min-height: 100vh;
-  background-color: blueviolet;
 }
 
 .hank {
-  padding: 7rem 4rem ;
+  padding: 5rem 5rem ;
   background-color: var(--color-gray-04);
   width: 100%;
-  height: 600px;
+  height: 530px;
   margin: 0 auto;
 }
 
 .hank .title {
   text-align: center;
   color: var(--color-gray-09) !important;
-  font-size: 30px !important;
+  font-size: 35px !important;
+  font-weight: 400;
+  line-height: 58px;
+
+  margin-bottom: 2.2rem !important;
+}
+
+.container-hank {
+  width: 100%;
+  display: flex;
+  overflow-x: auto; /*Se estiver scrool colocar */
+  scroll-behavior: smooth; /*Scrool mais leve*/
+}
+.container-hank::-webkit-scrollbar {
+  display: none; /*esconder o scrollbar*/
 }
 
 .upicon {
-  color: rgb(189, 22, 22) !important;
+  color: #E63946 !important;
   font-size: 2rem !important;
   margin: -8px 0;
-
 }
 
 .box-hank {
   width: 200px;
-  height:100px;
+  height: 200px;
+  padding: 1rem;
   background-color: var(--color-white);
-
+  border-radius: 6px;
+  margin: 0 1rem !important;
 }
 
 .box-hank img {
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 120px;
+  margin: 0 1rem;
+  border-radius: 3px;
+  /* object-fit: cover; */
 }
+
+.title-hank {
+  color: var(--color-black);
+  text-align: center;
+}
+
+.star {
+  text-align: center !important;
+  color: #E63946 !important;
+}
+
+.star:nth-child(n) {
+  font-size: 7px !important;
+}
+
+.div-veja {
+  width: 400px ;
+  margin: 3rem auto;
+}
+
+.btnVeja {
+  width: 100% !important;
+  height: 45px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.2 !important;
+  background: var(--color-blue-btn) !important;
+  color: var(--color-white) !important;
+}
+
+
