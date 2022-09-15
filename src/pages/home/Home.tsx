@@ -129,7 +129,7 @@ function Home() {
 
             <div className='div-veja'>
               <Button variant="contained" className="btnVeja">
-                Entrar
+                Veja mais empresas
               </Button>
             </div>
           </Grid>
