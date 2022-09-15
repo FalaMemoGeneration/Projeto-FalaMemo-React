@@ -1,5 +1,6 @@
 .regras-container{
     background-color: var(--color-white);
+    height: 100vh !important;
 }
 
 .regras-title{
