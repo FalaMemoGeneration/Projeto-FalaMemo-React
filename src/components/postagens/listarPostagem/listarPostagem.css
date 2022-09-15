@@ -23,12 +23,13 @@
   height: 270px;
   background-color: var(--color-white) !important;
   margin: 2rem 0 !important;
+  border-radius: 6px;
 }
 
 
 .btnAtuali {
   width: 150px !important;
-  padding: 0.690rem 0 !important;
+  height: 50px !important;
   background: var(--color-red-btn) !important;
   color: var(--color-white) !important;
   text-transform: uppercase;
@@ -38,5 +39,6 @@
 
 .btnCancelar {
   width: 150px !important;
+  height: 50px !important;
   font-size: 1rem !important;
 }

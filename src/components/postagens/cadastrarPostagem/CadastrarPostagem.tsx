@@ -133,7 +133,7 @@ function CadastroPost() {
   }
 
   return (
-    <Container maxWidth="sm" className="topo">
+    <Container maxWidth="sm" className="topo" key={postagem.id}>
       <form onSubmit={onSubmit}>
         <Typography
           variant="h3"
