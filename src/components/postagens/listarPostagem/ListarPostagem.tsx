@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./listarPostagem.css"
+import "./ListarPostagem.css"
 import { Button, CardActions, CardContent, Typography } from "@material-ui/core"
 import { Box } from "@mui/material"
 import { useSelector } from "react-redux"
