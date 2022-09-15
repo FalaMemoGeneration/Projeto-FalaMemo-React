@@ -44,6 +44,11 @@ function CadastroUsuario() {
     pcd: true,
   });
 
+  // const [genre, setGenre] = useState('')
+  // function getGenre(e: ChangeEvent<{value:unknown}>) {
+  //   setGenre(e.target.value as string);
+  // }
+
   useEffect(() => {
     if (userResult.id != 0) {
       navigate("/login");
@@ -184,7 +189,7 @@ function CadastroUsuario() {
                   value={user.genero}
                   label="Identidade de gênero"
                   name="genero" 
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                  onChange={getGenre}
                 >
                   <MenuItem>Mulher cis</MenuItem>
                   <MenuItem>Homem cis</MenuItem>
