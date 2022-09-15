@@ -57,6 +57,9 @@ function ContainerPost() {
     </div>
 
     <div className="public">
+      <Typography  gutterBottom>
+          {pub.avaliacao}
+        </Typography>
       <Typography variant="body2" component="p">
           {pub.texto}
         </Typography>

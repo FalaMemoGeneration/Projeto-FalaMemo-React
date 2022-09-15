@@ -1,5 +1,5 @@
 import { Button, Card, CardActions, CardContent, Typography } from "@material-ui/core"
-import { Box } from "@mui/material"
+import { Box, Grid } from "@mui/material"
 import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
@@ -7,6 +7,8 @@ import { toast } from "react-toastify"
 import Postagem from "../../../models/Postagem"
 import { busca } from "../../../services/Service"
 import { TokenState } from "../../../store/tokens/tokensReducer"
+
+import "./listarPostagem.css"
 
 function ListarPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -42,15 +44,17 @@ function ListarPostagem() {
     getPost()
   }, [posts.length])
 
+
+
+
   return (
     <>
+    <div className="publi" >
       {posts.map((post) => (
-        <Box m={2} key={post.id}>
-          <Card variant="outlined">
-            <CardContent>
+          <div className="post-user" key={post.id}>
+            <CardContent className="text-publi">
               <Typography  gutterBottom>
-               4,0 
-               <span>Ex-funcionário</span>
+               {post.avaliacao}
               </Typography>
 
               <Typography variant="h5" component="h2">
@@ -66,43 +70,43 @@ function ListarPostagem() {
               </Typography>
               
             </CardContent>
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
+
+            <CardActions className="botoes">
+              <Box display="flex" alignItems="center" justifyContent="center"  mb={1.5}>
+
                 <Link
                   to={`/formularioPostagem/${post.id}`}
                   className="text-decorator-none"
                 >
-                  <Box mx={1}>
+                  <Box mx={1} className="box-botoes">
                     <Button
                       variant="contained"
-                      className="marginLeft btn"
-                      size="small"
-                      color="primary"
+                      className="marginLeft btnAtuali"
                     >
                       atualizar
                     </Button>
                   </Box>
                 </Link>
+
                 <Link
                   to={`/deletarPostagem/${post.id}`}
                   className="text-decorator-none"
                 >
-                  <Box mx={1}>
+                  <Box mx={1} className="box-botoes" >
                     <Button
                       variant="contained"
-                      size="small"
-                      color="secondary"
                       className="btnCancelar"
                     >
                       deletar
                     </Button>
                   </Box>
                 </Link>
+                
               </Box>
             </CardActions>
-          </Card>
-        </Box>
+          </div>
       ))}
+      </div>
     </>
   )
 }

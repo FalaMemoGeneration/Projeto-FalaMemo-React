@@ -138,7 +138,7 @@ function CadastroPost() {
         <Typography
           variant="h3"
           color="textSecondary"
-          component="h1"
+          component="h3"
           align="center"
         >
           Cadastro de postagem:
