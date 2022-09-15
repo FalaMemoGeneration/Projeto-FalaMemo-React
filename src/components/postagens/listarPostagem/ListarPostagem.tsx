@@ -48,18 +48,23 @@ function ListarPostagem() {
         <Box m={2} key={post.id}>
           <Card variant="outlined">
             <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Postagens
+              <Typography  gutterBottom>
+               4,0 
+               <span>Ex-funcionário</span>
               </Typography>
-              <Typography variant="h5" component="h2" className="color-weight">
+
+              <Typography variant="h5" component="h2">
                 {post.titulo}
               </Typography>
+
               <Typography variant="body2" component="p">
                 {post.texto}
               </Typography>
+
               <Typography variant="body2" component="p">
                 {post.tema?.descricao}
               </Typography>
+              
             </CardContent>
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>

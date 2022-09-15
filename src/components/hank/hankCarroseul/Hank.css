@@ -1,0 +1,31 @@
+.box-hank {
+  width: 200px;
+  height: 200px;
+  padding: 1rem;
+  background-color: var(--color-white);
+  border-radius: 6px;
+  margin: 0 1rem !important;
+}
+
+.box-hank img {
+  width: 140px;
+  height: 120px;
+  margin: 0 1rem;
+  border-radius: 3px;
+  /* object-fit: cover; */
+}
+
+
+.title-hank {
+  color: var(--color-black);
+  text-align: center;
+}
+
+.star {
+  text-align: center !important;
+  color: #E63946 !important;
+}
+
+.star:nth-child(n) {
+  font-size: 7px !important;
+}
