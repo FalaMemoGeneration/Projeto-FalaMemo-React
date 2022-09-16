@@ -92,7 +92,7 @@ function ListarPostagem() {
                                     <Box mx={1} className="box-botoes" >
                                         <Button
                                             variant="contained"
-                                            className="btnCancelar">
+                                            className="btnDeletar">
                                             deletar
                                         </Button>
                                     </Box>

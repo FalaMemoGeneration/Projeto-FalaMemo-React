@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Avatar, Typography } from '@mui/material';
 import { Button } from '@material-ui/core';
+import { Box } from "@mui/material"
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ChatIcon from '@material-ui/icons/Chat';
 import ShareIcon from '@material-ui/icons/Share';
@@ -12,6 +13,11 @@ import Postagem from '../../../models/Postagem';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 import { busca } from '../../../services/Service';
+
+
+import StarIcon from "@material-ui/icons/Star";
+import StarHalfIcon from "@material-ui/icons/StarHalf";
+
 
 
 function ContainerPost() {
@@ -57,21 +63,37 @@ function ContainerPost() {
     </div>
 
     <div className="public">
-      <Typography  gutterBottom>
-          {pub.avaliacao}
+      <div className='text-avaliacao'>
+      <Typography  gutterBottom >
+          <span className='nota'> {pub.avaliacao},0 </span>
+        
+        <Box className="star-public">
+          <StarIcon />
+          <StarIcon />
+          <StarIcon />
+          <StarIcon />
+          <StarHalfIcon />
+        </Box>
+       
         </Typography>
-      <Typography variant="body2" component="p">
+
+        <Typography variant="body2" component="p" className='empresa' >
+          {pub.tema?.descricao}
+        </Typography>
+      </div>
+
+      <div className='texto'>
+        <Typography className='typoText'>
           {pub.texto}
         </Typography>
-      
-    <Typography variant="body2" component="p">
-        {pub.tema?.descricao}
-      </Typography>
+      </div>
     </div>
 
     <div className="reacao">
       <Curtidas />
     </div>
+
+    <span className='before'></span>
 
     <div className="buttons">
 
