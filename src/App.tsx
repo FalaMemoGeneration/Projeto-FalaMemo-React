@@ -19,6 +19,7 @@ import DeletarTema from "./components/temas/deletarTema/DeletarTema"
 import store from "./store/store"
 import { ToastContainer } from "react-toastify"
 import NavbarLogo from "./components/static/Navbar/NavbarLogo/NavbarLogo"
+import NaoEncontrado from "./pages/naoEncontrado/NaoEncontrado"
 
 
 function App() {
@@ -49,6 +50,8 @@ function App() {
 
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
             <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
+            <Route path="*" element={<NaoEncontrado />} />
 
           </Routes>
         </div>
