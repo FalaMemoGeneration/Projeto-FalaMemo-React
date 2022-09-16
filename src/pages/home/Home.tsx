@@ -10,7 +10,7 @@ import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostage
 import { TokenState } from "../../store/tokens/tokensReducer"
 import TrendingUpIcon from "@material-ui/icons/TrendingUp"
 import { toast } from "react-toastify"
-import Rank from "../../components/Rank/rankCarroseul/Rank"
+import Hank from "../../components/hank/hankCarroseul/Hank"
 import ContainerPost from "../../components/publicacao/containerPost/ContainerPost"
 
 
@@ -52,7 +52,11 @@ function Home() {
             </Typography>
 
             <div className="container-hank">
-                <Rank />              
+              <Hank />
+              <Hank />
+              <Hank />
+              <Hank />
+              <Hank />
             </div>
 
             <div className="div-veja">

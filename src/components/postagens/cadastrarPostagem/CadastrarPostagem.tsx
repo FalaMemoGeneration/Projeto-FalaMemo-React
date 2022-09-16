@@ -83,41 +83,6 @@ function CadastroPost() {
         })
     }
 
-<<<<<<< HEAD
-  return (
-    <Container maxWidth="sm" className="topo" key={postagem.id}>
-      <form onSubmit={onSubmit}>
-        <Typography
-          variant="h3"
-          color="textSecondary"
-          component="h3"
-          align="center"
-        >
-          Cadastro de postagem:
-        </Typography>
-        <TextField
-          value={postagem.titulo}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="titulo"
-          label="Título"
-          variant="outlined"
-          placeholder="Insira no mínimo 3 caracteres"
-          name="titulo"
-          margin="normal"
-          fullWidth
-        />
-        <TextField
-          value={postagem.texto}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-          id="texto"
-          label="Texto"
-          name="texto"
-          variant="outlined"
-          placeholder="Insira no mínimo 5 caracteres"
-          margin="normal"
-          fullWidth
-        />
-=======
     function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
         setPostagem({
             ...postagem,
@@ -125,7 +90,6 @@ function CadastroPost() {
             tema: tema,
         })
     }
->>>>>>> ca4969b4a00631dc075eb954727052797bb3845a
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
