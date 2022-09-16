@@ -4,13 +4,14 @@
 }
 
 .hank {
-
   padding: 5rem 4rem 0 4rem ;
   background-color: var(--color-gray-04);
   width: 100%;
   height: 560px;
   margin: 0 auto;
-  border-radius: 6px  ;
+  border-radius: 6px ;
+  display: flex;
+  flex-direction: column;
 }
 
 .hank .title {
@@ -23,10 +24,9 @@
 }
 
 .container-hank {
-  width: 90%;
+  width: 900px;
   display: flex;
-  overflow-x: auto; /*Se estiver scrool colocar */
-  scroll-behavior: smooth; /*Scrool mais leve*/
+  flex-direction: row;
   margin: 0 auto;
 }
 

@@ -9,6 +9,10 @@ import Postagem from "../../../models/Postagem"
 import { busca } from "../../../services/Service"
 import { TokenState } from "../../../store/tokens/tokensReducer"
 
+<<<<<<< HEAD
+import "./ListarPostagem.css"
+=======
+>>>>>>> ca4969b4a00631dc075eb954727052797bb3845a
 
 function ListarPostagem() {
     const [posts, setPosts] = useState<Postagem[]>([])
