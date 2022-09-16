@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
 
-import "./Hank.css";
+import "./Rank.css";
 
 const option = [ 
   {
@@ -61,7 +61,7 @@ const option = [
 
 
 
-function Hank() {
+function Rank() {
   return (
     <>
       {option.map((opcoes)=>(
@@ -89,4 +89,4 @@ function Hank() {
   );
 }
 
-export default Hank;
+export default Rank;
