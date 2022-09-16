@@ -10,7 +10,8 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Box, FormControl, InputLabel, MenuItem } from "@mui/material";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -44,10 +45,17 @@ function CadastroUsuario() {
     pcd: true,
   });
 
-  // const [genre, setGenre] = useState('')
-  // function getGenre(e: ChangeEvent<{value:unknown}>) {
-  //   setGenre(e.target.value as string);
-  // }
+  const [genre, setGenre] = useState("");
+
+  function getGenre(e: SelectChangeEvent) {
+    setGenre(e.target.value as string);
+  }
+
+  const [orientation, setOrientation] = useState("");
+
+  function getOrientation(e: SelectChangeEvent) {
+    setOrientation(e.target.value as string);
+  }
 
   useEffect(() => {
     if (userResult.id != 0) {
@@ -63,8 +71,19 @@ function CadastroUsuario() {
     setUser({
       ...user,
       [e.target.name]: e.target.value,
+      genero: genre,
+      orientacao: orientation,
     });
   }
+
+  useEffect(() => {
+    setUser({
+      ...user,
+      genero: genre,
+      orientacao: orientation
+    });
+  }, [genre, orientation]);
+
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     if (confirmarSenha == user.senha && user.senha.length >= 8) {
@@ -97,7 +116,6 @@ function CadastroUsuario() {
   }
 
   return (
-
     <Grid
       container
       direction="column"
@@ -105,22 +123,20 @@ function CadastroUsuario() {
       alignItems="center"
       className="cadastro-container"
     >
-      
-
       <Grid item xs={6} alignItems="center" className="cadastro-grid">
-      <Grid item xs={2}></Grid>
-      <Grid>
-      <Typography
-        variant="h3"
-        // gutterBottom
-        color={"textPrimary"}
-        component="h3"
-        align="center"
-        className="cadastro-h3"
-      >
-        Cadastrar
-      </Typography>
-      </Grid>
+        <Grid item xs={2}></Grid>
+        <Grid>
+          <Typography
+            variant="h3"
+            // gutterBottom
+            color={"textPrimary"}
+            component="h3"
+            align="center"
+            className="cadastro-h3"
+          >
+            Cadastrar
+          </Typography>
+        </Grid>
         <Box>
           <form onSubmit={onSubmit} className="cadastro-form">
             <TextField
@@ -181,67 +197,62 @@ function CadastroUsuario() {
             />
 
             {/* <Box sx={{ minWidth: 120 }}> */}
-            {/* <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Identidade de gênero</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="genero"
-                  value={user.genero}
-                  label="Identidade de gênero"
-                  name="genero" 
-                  onChange={getGenre}
-                >
-                  <MenuItem>Mulher cis</MenuItem>
-                  <MenuItem>Homem cis</MenuItem>
-                  <MenuItem>Mulher trans</MenuItem>
-                  <MenuItem>Homem trans</MenuItem>
-                  <MenuItem>Pessoa não-binária</MenuItem>
-                  <MenuItem>Pessoa agênero</MenuItem>
-                  <MenuItem>Prefiro não informar</MenuItem>
-                </Select>
-              </FormControl> */}
+            <FormControl fullWidth margin="normal">
+              <InputLabel id="demo-simple-select-label">
+                Identidade de gênero
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="genero"
+                value={user.genero}
+                label="Identidade de gênero"
+                name="genero"
+                onChange={getGenre}
+              >
+                <MenuItem value={"Mulher cis"}>Mulher cis</MenuItem>
+                <MenuItem value={"Homem cis"}>Homem cis</MenuItem>
+                <MenuItem value={"Mulher trans"}>Mulher trans</MenuItem>
+                <MenuItem value={"Homem trans"}>Homem trans</MenuItem>
+                <MenuItem value={"Pessoa não-binária"}>Pessoa não-binária</MenuItem>
+                <MenuItem value={"Pessoa agênero"}>Pessoa agênero</MenuItem>
+                <MenuItem value={"Prefiro não informar"}>Prefiro não informar</MenuItem>
+              </Select>
+            </FormControl>
             {/* </Box> */}
 
-            <TextField
-              value={user.genero}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="genero"
-              label="Gênero"
-              variant="outlined"
-              name="genero"
-              margin="normal"
-              fullWidth
-            />
-
-            <TextField
-              value={user.orientacao}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="orientacao"
-              label="Orientação"
-              variant="outlined"
-              name="orientacao"
-              margin="normal"
-              fullWidth
-            />
+            <FormControl fullWidth margin="normal">
+              <InputLabel id="demo-simple-select-label">
+                Orientação sexual
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="genero"
+                value={user.orientacao}
+                label="Identidade de gênero"
+                name="genero"
+                onChange={getOrientation}
+              >
+                <MenuItem value={"Heterossexual"}>Heterossexual</MenuItem>
+                <MenuItem value={"Homossexual"}>Homossexual</MenuItem>
+                <MenuItem value={"Bissexual"}>Bissexual</MenuItem>
+                <MenuItem value={"Pansexual"}>Pansexual</MenuItem>
+                <MenuItem value={"Assexual"}>Assexual</MenuItem>
+                <MenuItem value={"Prefiro não informar"}>Prefiro não informar</MenuItem>
+              </Select>
+            </FormControl>
 
             <FormControl margin="normal">
-              <FormLabel id="demo-radio-buttons-group-label">É pessoa com deficiência?</FormLabel>
+              <FormLabel id="demo-radio-buttons-group-label">
+                É pessoa com deficiência?
+              </FormLabel>
               <RadioGroup
                 row
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="female"
                 name="radio-buttons-group"
               >
-                <FormControlLabel
-                  value="sim"
-                  control={<Radio />}
-                  label="Sim"
-                />
-                <FormControlLabel
-                  value="nao"
-                  control={<Radio />}
-                  label="Não"
-                />
+                <FormControlLabel value="sim" control={<Radio />} label="Sim" />
+                <FormControlLabel value="nao" control={<Radio />} label="Não" />
               </RadioGroup>
             </FormControl>
 
