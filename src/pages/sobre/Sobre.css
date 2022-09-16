@@ -2,40 +2,6 @@
     background-color: var(--color-white);
 }
 
-.sobre-title {
-    font-weight: bold !important;
-    color: var(--color-black);
-}
-
-.sobre-conteudo {
-    text-align: justify !important;
-    color: var(--color-black);
-}
-
-.nome-integrante {
-    font-weight: bold !important;
-    color: var(--color-black);
-}
-
-.sobre-integrante {
-    color: var(--color-black);
-    text-align: justify;
-}
-
-.sobre-background {
-    background-color: var(--color-gray-02) !important;
-    width: 1489px !important;
-    left: 0px !important;
-    top: 1214px !important;
-}
-
 .sobre-icons {
     color: var(--color-black) !important;
-}
-
-.img {
-    width: 20vh;
-    min-height: 20vh;
-    /* background-size: 256px;
-    background-position: center; */
 }
