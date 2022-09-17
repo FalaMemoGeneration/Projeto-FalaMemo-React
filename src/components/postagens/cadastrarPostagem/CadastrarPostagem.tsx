@@ -153,13 +153,14 @@ function CadastroPost() {
   const [rating, setRating] = useState("");
 
   return (
-    <Grid container className="topo">
+    <Grid container className="topo centralizar">
       <form onSubmit={onSubmit}>
         <Typography
           variant="h3"
           color="textSecondary"
           component="h3"
           align="center"
+          className="cadastro-tema-margin experiencias"
         >
           Compartilhe sua experiência:
         </Typography>
@@ -173,6 +174,7 @@ function CadastroPost() {
           name="titulo"
           margin="normal"
           fullWidth
+          className="cadastro-tema-margin-2"
         />
 
         <TextField

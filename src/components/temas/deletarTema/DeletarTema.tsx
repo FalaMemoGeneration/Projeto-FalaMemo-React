@@ -7,6 +7,7 @@ import { toast } from "react-toastify"
 import Tema from "../../../models/Tema"
 import { buscaId, deleteId } from "../../../services/Service"
 import { TokenState } from "../../../store/tokens/tokensReducer"
+import './DeletarTema.css'
 
 function DeletarTema() {
 
@@ -56,7 +57,7 @@ function DeletarTema() {
         "Authorization": token
       }
     })
-    toast.success("Tema deletado com sucesso!", {
+    toast.success("Empresa deletada com sucesso!", {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
@@ -73,15 +74,15 @@ function DeletarTema() {
 
   return (
     <>
-      <Box m={2}>
+      <Box m={2} className="publi">
         <Card variant="outlined">
           <CardContent>
             <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
-                Deseja deletar o tema?
+              <Typography color="textSecondary" gutterBottom variant="h5" className="deletar-h5">
+                Deseja deletar a empresa?
               </Typography>
               <Typography color="textSecondary">
-                {tema?.descricao}
+              <span className="span-deletar">Empresa: </span>{tema?.descricao}
               </Typography>
             </Box>
           </CardContent>
@@ -93,13 +94,14 @@ function DeletarTema() {
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button onClick={nao} variant="contained" color="secondary" className="btn">
+                <Button onClick={nao} variant="contained" color="secondary" className="btnCancelar2 marginRight">
                   Não
                 </Button>
               </Box>
             </Box>
           </CardActions>
         </Card>
+        <img src="https://i.imgur.com/FQPvqDN.png" alt="" />
       </Box>
     </>
   )
