@@ -26,3 +26,10 @@
     background: var(--color-gray-02) !important;
     transition: 0.5s !important;
 }
+
+
+@media(max-width: 1200px) {
+    .btnModal {
+        width: 550px;
+    }
+}
