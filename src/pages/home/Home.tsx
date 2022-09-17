@@ -57,7 +57,7 @@ function Home() {
 
             <div className="div-veja">
               <Button variant="contained" className="btnVeja">
-                Veja mais empresas
+                <Link to ="/temas" className="text-decorator-none cor-link">Veja mais empresas</Link>
               </Button>
             </div>
           </Grid>

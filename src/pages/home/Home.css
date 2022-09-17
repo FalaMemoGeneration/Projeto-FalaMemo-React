@@ -74,3 +74,6 @@
   }
 }
 
+.cor-link {
+  color: var(--color-white) !important;
+}
