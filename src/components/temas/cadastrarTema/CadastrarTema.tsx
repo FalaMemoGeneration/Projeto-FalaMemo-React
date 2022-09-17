@@ -6,6 +6,7 @@ import { toast } from "react-toastify"
 import Tema from "../../../models/Tema"
 import { buscaId, post, put } from "../../../services/Service"
 import { TokenState } from "../../../store/tokens/tokensReducer"
+import "./CadastrarTema.css"
 
 function CadastrarTema() {
     let navigate = useNavigate()
@@ -124,12 +125,13 @@ function CadastrarTema() {
 
     return (
         <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
-                    Finalizar
+            <form onSubmit={onSubmit} className="centralizar">
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className="cadastro-tema-margin" >Cadastrar Empresa</Typography>
+                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Nome da empresa" variant="outlined" name="descricao" margin="normal" fullWidth className="cadastro-tema-margin-2" />
+                <Button type="submit" variant="contained" color="primary" className="btnCadastrar2 btnCentralizar">
+                    Cadastrar
                 </Button>
+                <img className="cadastrar-tema-img" src="https://i.imgur.com/p7yARNs.png" alt="" />
             </form>
         </Container>
     )

@@ -1,0 +1,17 @@
+.cadastro-tema-margin {
+  margin-top: 100px !important;
+}
+
+.cadastro-tema-margin-2 {
+  margin-top: 40px !important;
+}
+
+.centralizar {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.cadastrar-tema-img {
+  margin-top: 200px;
+}
