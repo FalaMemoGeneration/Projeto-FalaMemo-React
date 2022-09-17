@@ -64,15 +64,8 @@ function Login() {
   }
 
   return (
-    <Grid
-      container
-      direction="row"
-      justifyContent="space-between"
-      alignItems="center"
-      className="grid-login"
-    >
-      <Grid
-        xs={4}
+    <div className="grid-login">
+      <div
         className="grid-logo">
 
         <Box className="logo">
@@ -83,10 +76,10 @@ function Login() {
           </Typography>
         </Box>
 
-      </Grid>
+      </div>
 
 
-      <Grid alignItems="center" xs={8} className="boxLogin" >
+      <div className="boxLogin" >
         <div className="rectangle">
           <form onSubmit={onSubmit}>
             <TextField
@@ -135,8 +128,8 @@ function Login() {
             </Typography>
           </Link>
         </div>
-      </Grid>
-    </Grid>
+      </div>
+    </div>
   )
 }
 
