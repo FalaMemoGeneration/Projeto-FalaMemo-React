@@ -127,6 +127,7 @@
   margin: 3rem auto;
   padding: 0 3rem;
 }
+
 .btnReacao {
   padding: 0 1rem;
   margin: 0rem 0.550rem !important;
@@ -145,3 +146,31 @@
 }
 
 
+
+@media(max-width: 1200px) {
+  .publi-user {
+    width: 700px;
+    height: 720px;
+  }
+
+
+  .public {
+    height: 390px;
+  }
+  
+  .title-user {
+    width: 900px !important;
+  }
+
+  .buttons {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0;
+  }
+  
+  .btnReacao {
+    margin-top: 1rem;
+    width: 170px !important;;
+  }
+
+}
