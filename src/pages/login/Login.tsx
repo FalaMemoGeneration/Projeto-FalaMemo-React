@@ -72,7 +72,9 @@ function Login() {
           <img src="https://i.imgur.com/URiYwTB.png" alt="" />
           <Typography align="inherit">
             Compartilhe suas experiências.
-            Dê voz às <br /> minorias no FalaMemo
+          </Typography>
+          <Typography align="inherit">
+            Dê voz às minorias no FalaMemo
           </Typography>
         </Box>
 
@@ -111,7 +113,7 @@ function Login() {
             </Box>
           </form>
           <Box display="flex" justifyContent="center" marginTop={2} marginBottom={4}>
-            <Link to="/" >
+            <Link to="/" className="text-decoretor-none">
               <Typography variant="subtitle1" gutterBottom align="center" className="link-senha">
                 Esqueceu a senha?
               </Typography>

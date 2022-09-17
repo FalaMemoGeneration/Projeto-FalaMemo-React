@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 4rem 6rem;
-  height: 90vh;
+  height: 700px;
 }
 
 .grid-logo {
@@ -32,7 +32,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 530px;
-  height: 45vh;
+  height: 60%;
   margin: 5rem auto;
   background-color: var(--color-gray-02)!important;
   padding: 3rem 2rem 2rem 2rem ;
@@ -60,9 +60,13 @@
   color: var(--color-black-10) !important;
 }
 
+.link-senha:hover{
+  text-decoration:solid;
+}
+
 .text-decoretor-none {
   text-decoration: none;
-}
+} 
 
 
 .btnCadastrar {
@@ -88,8 +92,26 @@
 }
 
 
-/* .frase {
-  position: absolute;
-  bottom: 36%;
-  left: 11.3%;
-} */
+@media(max-width:1200px) {
+  .grid-logo {
+    margin: 3rem auto;
+  }
+  
+  .grid-login {
+    height: 870px;
+    margin-bottom:0;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+
+  .rectangle {
+    width: 530px;
+    height: 50%;
+  }
+
+  .logo {
+    width: 100%;
+  }
+  
+}
