@@ -79,8 +79,8 @@ function Navbar() {
     navbarComponent = (
       <div className={classes.root}>
         <AppBar position="static" className="nav-color">
-          <Toolbar>
-            <Toolbar>
+          <Toolbar className="tool-home">
+            <Toolbar className="logo-home">
               <Link to="/home">
                 <img src="https://i.imgur.com/2XHo3mY.png" />
               </Link>

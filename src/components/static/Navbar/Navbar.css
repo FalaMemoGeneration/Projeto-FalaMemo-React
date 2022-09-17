@@ -3,10 +3,21 @@
   color: #595959 !important;
 }
 
+.tool-home {
+  margin: 1rem 10rem;
+}
+
+.logo-home {
+  margin-right: auto;
+}
+
 .search-color-border {
   background-color: #FFFFFF !important;
   color: #000000 !important;
   border-radius: 6px !important;
+
+  padding: 0 9rem;
+  margin: 0 auto !important
 }
 
 .nav-avatar {
@@ -21,4 +32,18 @@
 .nav-toolbar {
   margin-right: auto !important;
   margin-left: auto !important;
+}
+
+@media(max-width: 1200px) {
+  .tool-home{
+    margin: 1rem 0;
+  }
+
+  .search-color-border {
+    padding: 0;
+  }
+
+  .logo-home {
+    margin-right: 0;
+  }
 }
