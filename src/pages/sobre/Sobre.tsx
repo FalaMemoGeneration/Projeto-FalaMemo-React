@@ -61,8 +61,13 @@ function Sobre() {
                 Amanda Falcão
               </Typography>
               <Typography align="justify" variant="body2">
-                Pós-graduada em Letras, mas em transição de carreira para a área de Tecnologia. Formada no bootcamp da Generation Brasil, interessada em Desenvolvimento Web, UI/UX e jogos de simulação.
+                Pós-graduada em Língua Inglesa, mas em transição de carreira para a área de Tecnologia, interessada por UI/UX.
               </Typography>
+              <br />
+              <Typography align="justify" variant="body2">
+                Formada no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).
+              </Typography>
+              <br />
               <Box>
                 <a href="https://www.linkedin.com/in/amdfd/"
                   target="_blank"
@@ -97,8 +102,13 @@ function Sobre() {
                 Fernando Pajtak
               </Typography>
               <Typography align="justify" variant="body2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, dolore magnam fugit provident minus natus exercitationem dolores iure, doloremque corporis tenetur sint eaque ut et quos, accusamus ipsum iusto qui.
+                Apaixonado por música e jogos do gênero MOBA.
               </Typography>
+              <br />
+              <Typography align="justify" variant="body2">
+                Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).
+              </Typography>
+              <br />
               <Box>
                 <a href="https://www.linkedin.com/in/fernando-pajtak-barbosa-557279231/"
                   target="_blank"
@@ -133,8 +143,13 @@ function Sobre() {
                 Filipe Cavalcanti
               </Typography>
               <Typography align="justify" variant="body2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, dolore magnam fugit provident minus natus exercitationem dolores iure, doloremque corporis tenetur sint eaque ut et quos, accusamus ipsum iusto qui.
+                Graduado em RH, mas em transição de carreira para a área de Tecnologia, apaixonado por jogos do gênero RPG.
               </Typography>
+              <br />
+              <Typography align="justify" variant="body2">
+                Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).
+              </Typography>
+              <br />
               <Box>
                 <a href="https://www.linkedin.com/in/filipecavalcantideandrade/"
                   target="_blank"
@@ -169,8 +184,13 @@ function Sobre() {
                 Ingrid Aquino
               </Typography>
               <Typography align="justify" variant="body2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, dolore magnam fugit provident minus natus exercitationem dolores iure, doloremque corporis tenetur sint eaque ut et quos, accusamus ipsum iusto qui.
+                Certificada pela Brasscom, onde aprimorei mais o meu interesse pela tecnlologia.
               </Typography>
+              <br />
+              <Typography align="justify" variant="body2">
+                Formada no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).
+              </Typography>
+              <br />
               <Box>
                 <a href="https://www.linkedin.com/in/ingrid-aquino-88a8b9147/"
                   target="_blank"
@@ -205,9 +225,13 @@ function Sobre() {
                 Jefferson Rocha
               </Typography>
               <Typography align="justify" variant="body2">
-                {/* Sou Jefferson, tenho 30 anos, adoro gatos e sou estudante na area de tecnologia. */}
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis molestiae aut ducimus doloribus ratione in optio temporibus veniam cumque et praesentium laborum, ipsum sint aliquam quo, officia sit voluptas iste?
+                Estudante de Análise e Desenvolvimento de Sistemas, apaixonado por gatos.
               </Typography>
+              <br />
+              <Typography align="justify" variant="body2">
+                Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).
+              </Typography>
+              <br />
               <Box>
                 <a href="https://www.linkedin.com/in/jefferson-rocha-335494211/"
                   target="_blank"
@@ -242,8 +266,13 @@ function Sobre() {
                 Mariá Dombrate
               </Typography>
               <Typography align="justify" variant="body2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate excepturi architecto vitae, nihil odit quis veniam dolorum dolores iusto numquam omnis animi ipsum laborum corporis, alias consectetur corrupti perspiciatis laudantium?
+                Pós-graduada em Neuropsicologia, mas em transição de carreira para a área de Tecnologia.
               </Typography>
+              <br />
+              <Typography align="justify" variant="body2">
+                Formada pelo Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).
+              </Typography>
+              <br />
               <Box>
                 <a href="https://www.linkedin.com/in/mari%C3%A1-calmon-dombrate/"
                   target="_blank"
@@ -278,8 +307,13 @@ function Sobre() {
                 Victoria Alcoforado
               </Typography>
               <Typography align="justify" variant="body2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate excepturi architecto vitae, nihil odit quis veniam dolorum dolores iusto numquam omnis animi ipsum laborum corporis, alias consectetur corrupti perspiciatis laudantium?
+                Graduada em Arquitetura e Urbanismo, mas em transição de carreira para a área da Tecnologia.
               </Typography>
+              <br />
+              <Typography align="justify" variant="body2">
+                Formada pelo Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).
+              </Typography>
+              <br />
               <Box>
                 <a href="https://www.linkedin.com/in/victoriaalcoforado/"
                   target="_blank"

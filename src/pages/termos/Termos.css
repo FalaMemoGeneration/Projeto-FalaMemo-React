@@ -1,5 +1,7 @@
 .termos-container{
     background-color: var(--color-white);
+    width: 100vw !important;
+    height: 100vh !important;
 }
 
 .termos-title{
@@ -13,6 +15,6 @@
 }
 
 .termos-img{
-    width: 384px;
-    min-height: 152px;
+    width: 500px;
+    height: 500px;
 }

@@ -1,19 +1,15 @@
-.regras-container{
+.regras-container {
     background-color: var(--color-white);
+    width: 100vw !important;
     height: 100vh !important;
 }
 
-.regras-title{
+.regras-title {
     font-weight: bold !important;
     color: var(--color-black);
 }
 
-.regras-conteudo{
+.regras-conteudo {
     text-align: justify !important;
     color: var(--color-black);
-}
-
-.regras-img{
-    width: 384px;
-    min-height: 152px;
 }
