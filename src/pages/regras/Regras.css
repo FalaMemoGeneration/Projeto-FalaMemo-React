@@ -12,3 +12,8 @@
     text-align: justify !important;
     color: var(--color-black);
 }
+
+.regras-img{
+    width: 384px;
+    min-height: 152px;
+}
