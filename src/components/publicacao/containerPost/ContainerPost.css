@@ -108,7 +108,7 @@
   content: '';
   background-color: var(--color-gray-04);
   width: 500px;
-  height: 1px;
+  height: 0.175rem;
 
   position: absolute;
   left: 50%;
