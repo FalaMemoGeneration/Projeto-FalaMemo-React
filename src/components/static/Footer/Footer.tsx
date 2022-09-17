@@ -18,12 +18,12 @@ function Footer() {
 
         <Grid
           paddingY={7}
-          item xs={3}>
+          xs={3}>
           <Box>
             <Link to="/login"><img src="https://i.imgur.com/2XHo3mY.png" alt="Logo falaMemo" /></Link>
           </Box>
           <Box
-          marginLeft={2}>
+            marginLeft={2}>
             <Typography
               variant="subtitle2"
               gutterBottom
@@ -36,7 +36,7 @@ function Footer() {
         </Grid>
 
         <Grid
-          item xs={3}>
+          xs={3}>
           <Box>
             <Typography className="text-title" paddingY={7} paddingBottom={1}>
               FalaMemo
@@ -69,7 +69,7 @@ function Footer() {
         </Grid>
 
         <Grid
-          item xs={3}>
+          xs={3}>
           <Box>
             <Typography className="text-title" paddingY={7} paddingBottom={1}>
               Informações
