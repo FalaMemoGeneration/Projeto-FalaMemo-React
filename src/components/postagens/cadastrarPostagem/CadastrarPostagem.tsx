@@ -1,207 +1,250 @@
-import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core"
-import React, { ChangeEvent, useEffect, useState } from "react"
-import { useSelector } from "react-redux"
-import { useNavigate, useParams } from "react-router-dom"
-import { toast } from "react-toastify"
-import Postagem from "../../../models/Postagem"
-import Tema from "../../../models/Tema"
-import { busca, buscaId, post, put } from "../../../services/Service"
-import { TokenState } from "../../../store/tokens/tokensReducer"
+import {
+  Button,
+  Container,
+  FormControl,
+  FormHelperText,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import { Box, Grid } from "@mui/material";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import Postagem from "../../../models/Postagem";
+import Tema from "../../../models/Tema";
+import { busca, buscaId, post, put } from "../../../services/Service";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import "./CadastrarPostagem.css";
 
 function CadastroPost() {
-    let navigate = useNavigate()
-    const { id } = useParams<{ id: string }>()
-    const [temas, setTemas] = useState<Tema[]>([])
-    const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state) => state.tokens
-    )
+  let navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
+  const [temas, setTemas] = useState<Tema[]>([]);
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
-    useEffect(() => {
-        if (token == "") {
-            toast.error("Você precisa estar logado!", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined
-            })
-            navigate("/login")
-        }
-    }, [token])
-
-    const [tema, setTema] = useState<Tema>({
-        id: 0,
-        descricao: "",
-    })
-    const [postagem, setPostagem] = useState<Postagem>({
-        id: 0,
-        titulo: "",
-        texto: "",
-        avaliacao: 0,
-        tema: null,
-        usuario: {
-            id: 1,
-            nome: "",
-            usuario: "",
-            foto: "",
-            genero: "",
-            orientacao: "",
-            pcd: false,
-            senha: ""
-        }
-    })
-
-    useEffect(() => {
-        setPostagem({
-            ...postagem,
-            tema: tema
-        })
-    }, [tema])
-
-    useEffect(() => {
-        getTemas()
-        if (id !== undefined) {
-            findByIdPostagem(id)
-        }
-    }, [id])
-
-    async function getTemas() {
-        await busca("/temas", setTemas, {
-            headers: {
-                Authorization: token,
-            },
-        })
+  useEffect(() => {
+    if (token == "") {
+      toast.error("Você precisa estar logado!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      navigate("/login");
     }
+  }, [token]);
 
-    async function findByIdPostagem(id: string) {
-        await buscaId(`postagens/${id}`, setPostagem, {
-            headers: {
-                Authorization: token,
-            },
-        })
+  const [tema, setTema] = useState<Tema>({
+    id: 0,
+    descricao: "",
+  });
+  const [postagem, setPostagem] = useState<Postagem>({
+    id: 0,
+    titulo: "",
+    texto: "",
+    avaliacao: 1,
+    tema: null,
+    usuario: {
+      id: 1,
+      nome: "",
+      usuario: "",
+      foto: "",
+      genero: "",
+      orientacao: "",
+      pcd: false,
+      senha: "",
+    },
+  });
+
+  //   function getRating(e: SelectChangeEvent) {
+  //     setRating(e.target.value as string);
+  //   }
+
+  useEffect(() => {
+    setPostagem({
+      ...postagem,
+      tema: tema,
+      //   avaliacao: rating
+    });
+  }, [tema]);
+
+  useEffect(() => {
+    getTemas();
+    if (id !== undefined) {
+      findByIdPostagem(id);
     }
+  }, [id]);
 
-    function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
-        setPostagem({
-            ...postagem,
-            [e.target.name]: e.target.value,
-            tema: tema,
-        })
+  async function getTemas() {
+    await busca("/temas", setTemas, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+
+  async function findByIdPostagem(id: string) {
+    await buscaId(`postagens/${id}`, setPostagem, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+
+  function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
+    setPostagem({
+      ...postagem,
+      [e.target.name]: e.target.value,
+      tema: tema,
+      //   avaliacao: rating,
+    });
+  }
+
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    if (id !== undefined) {
+      put(`/postagens`, postagem, setPostagem, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      toast.success("Postagem atualizada com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      post(`/postagens`, postagem, setPostagem, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      toast.success("Postagem cadastrada com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
+    back();
+  }
 
-    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()
+  function back() {
+    navigate("/postagens");
+  }
 
-        if (id !== undefined) {
-            put(`/postagens`, postagem, setPostagem, {
+  const [rating, setRating] = useState("");
+
+  return (
+    <Grid container className="topo">
+      <form onSubmit={onSubmit}>
+        <Typography
+          variant="h3"
+          color="textSecondary"
+          component="h3"
+          align="center"
+        >
+          Compartilhe sua experiência:
+        </Typography>
+        <TextField
+          value={postagem.titulo}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+          id="titulo"
+          label="Seu cargo*"
+          variant="outlined"
+          placeholder="Insira no mínimo 3 caracteres"
+          name="titulo"
+          margin="normal"
+          fullWidth
+        />
+
+        <TextField
+          value={postagem.texto}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+          id="texto"
+          label="Sua experiência*"
+          name="texto"
+          variant="outlined"
+          multiline
+          minRows={6}
+          placeholder="Insira no mínimo 5 caracteres"
+          margin="normal"
+          fullWidth
+        />
+
+        {/* <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={postagem.avaliacao}
+            label="Avaliação"
+            onChange={getRating}
+          >
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+        </FormControl> */}
+
+        <TextField
+            value={postagem.avaliacao}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
+            id="avaliacao"
+            label="Avaliação"
+            name="avaliacao"
+            variant="outlined"
+            placeholder="Insira um número de 1 a 5"
+            margin="normal"
+            fullWidth
+          />
+
+        <FormControl>
+          <InputLabel id="demo-simple-select-helper-label">Empresa</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            onChange={(e) =>
+              buscaId(`/temas/${e.target.value}`, setTema, {
                 headers: {
-                    Authorization: token,
+                  Authorization: token,
                 },
-            })
-            toast.success("Postagem atualizada com sucesso!", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined
-            })
-        } else {
-            post(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    Authorization: token,
-                },
-            })
-            toast.success("Postagem cadastrada com sucesso!", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined
-            })
-        }
-        back()
-    }
-
-    function back() {
-        navigate("/postagens")
-    }
-
-    return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography
-                    variant="h3"
-                    color="textSecondary"
-                    component="h3"
-                    align="center"
-                >
-                    Cadastro de postagem:
-                </Typography>
-                <TextField
-                    value={postagem.titulo}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-                    id="titulo"
-                    label="Título"
-                    variant="outlined"
-                    placeholder="Insira no mínimo 3 caracteres"
-                    name="titulo"
-                    margin="normal"
-                    fullWidth
-                />
-                <TextField
-                    value={postagem.texto}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-                    id="texto"
-                    label="Texto"
-                    name="texto"
-                    variant="outlined"
-                    placeholder="Insira no mínimo 5 caracteres"
-                    margin="normal"
-                    fullWidth
-                />
-
-                <TextField
-                    value={postagem.avaliacao}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
-                    id="avaliacao"
-                    label="Avaliação"
-                    name="avaliacao"
-                    variant="outlined"
-                    placeholder="Insira um número de 1 a 5"
-                    margin="normal"
-                    fullWidth
-                />
-
-                <FormControl>
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-                    <Select
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={(e) =>
-                            buscaId(`/temas/${e.target.value}`, setTema, {
-                                headers: {
-                                    Authorization: token,
-                                },
-                            })
-                        }
-                    >
-                        {temas.map(tema => (
-                            <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
-                        ))}
-                    </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary" className="btn">
-                        Finalizar
-                    </Button>
-                </FormControl>
-            </form>
-        </Container>
-    )
+              })
+            }
+          >
+            {temas.map((tema) => (
+              <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+            ))}
+          </Select>
+          <FormHelperText>Escolha uma empresa da lista</FormHelperText>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            className="btnCadastrar cadastro-margin-top"
+          >
+            Publicar
+          </Button>
+        </FormControl>
+      </form>
+    </Grid>
+  );
 }
-export default CadastroPost
+export default CadastroPost;

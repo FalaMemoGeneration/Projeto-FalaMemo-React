@@ -20,7 +20,7 @@ function Footer() {
           paddingY={7}
           item xs={3}>
           <Box>
-            <img src="https://i.imgur.com/2XHo3mY.png" alt="Logo falaMemo" />
+            <Link to="/login"><img src="https://i.imgur.com/2XHo3mY.png" alt="Logo falaMemo" /></Link>
           </Box>
           <Box
           marginLeft={2}>
