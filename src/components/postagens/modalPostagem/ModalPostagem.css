@@ -6,6 +6,7 @@
     border: none;
     background: var(--color-white);
     border-radius: 6px;
+    transition: 0.5s !important;
 }
 
 .btnModal:hover {
@@ -13,10 +14,15 @@
 }
 
 .btnModal span {
-    color: #B3B3B3 !important;
+    color: var(--color-blue-01) !important;
     font-family: 'Roboto';
     font-style: normal !important;
     font-weight: 400;
     font-size: 20px;
     line-height: 1.5;
+}
+
+.btnModal:hover {
+    background: var(--color-gray-02) !important;
+    transition: 0.5s !important;
 }
