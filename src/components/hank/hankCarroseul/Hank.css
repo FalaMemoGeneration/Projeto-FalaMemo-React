@@ -1,18 +1,27 @@
+.slide {
+  height: 100%;
+  padding-bottom: 4rem;
+}
+
 .box-hank {
-  width: 200px;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+  height: 250px;
   padding: 1rem;
   background-color: var(--color-white);
   border-radius: 6px;
-  margin: 0 1rem !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .box-hank img {
-  width: 140px;
-  height: 120px;
-  margin: 0 1rem;
+  width: 160px;
+  height: 140px;
   border-radius: 3px;
   /* object-fit: cover; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 
@@ -28,4 +37,17 @@
 
 .star:nth-child(n) {
   font-size: 7px !important;
+}
+
+
+
+.swiper {
+  width: 35%;
+  height: 100%;
+}
+
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
 }

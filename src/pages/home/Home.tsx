@@ -53,10 +53,6 @@ function Home() {
 
             <div className="container-hank">
               <Hank />
-              <Hank />
-              <Hank />
-              <Hank />
-              <Hank />
             </div>
 
             <div className="div-veja">
