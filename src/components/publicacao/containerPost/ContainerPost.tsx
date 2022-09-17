@@ -55,7 +55,7 @@ function ContainerPost() {
         <Typography className="title-user">
           {pub.titulo}
         </Typography>
-        <span> Homem cis gay </span>
+        {/* <span>Inserir gênero e orientação</span> */}
       </div>
       <div>
         {/* <MenuPublic /> */}
