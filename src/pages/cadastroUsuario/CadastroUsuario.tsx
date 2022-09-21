@@ -116,7 +116,7 @@ function CadastroUsuario() {
   }
 
   return (
-    <><NavbarLogo /><Grid
+    <Grid
       container
       direction="column"
       justifyContent="center"
@@ -277,7 +277,7 @@ function CadastroUsuario() {
           </form>
         </Box>
       </Grid>
-    </Grid></>
+    </Grid>
   );
 }
 
