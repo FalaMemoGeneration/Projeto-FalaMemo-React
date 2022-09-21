@@ -1,15 +1,20 @@
-import "./Navbar.css"
-import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import InputBase from "@material-ui/core/InputBase"
-import { createStyles, alpha, Theme, makeStyles } from "@material-ui/core/styles"
-import SearchIcon from "@material-ui/icons/Search"
-import Avatar from "@mui/material/Avatar"
-import { useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
-import { TokenState } from "../../../store/tokens/tokensReducer"
-import BasicMenu from "./Menu/Menu"
-import NavbarLogo from "./NavbarLogo/NavbarLogo"
+import "./Navbar.css";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import InputBase from "@material-ui/core/InputBase";
+import {
+  createStyles,
+  alpha,
+  Theme,
+  makeStyles,
+} from "@material-ui/core/styles";
+import SearchIcon from "@material-ui/icons/Search";
+import Avatar from "@mui/material/Avatar";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import BasicMenu from "./Menu/Menu";
+import NavbarLogo from "./NavbarLogo/NavbarLogo";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -66,15 +71,15 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
   })
-)
+);
 
 function Navbar() {
-  const classes = useStyles()
+  const classes = useStyles();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  )
+  );
 
-  let navbarComponent
+  let navbarComponent;
   if (token != "") {
     navbarComponent = (
       <div className={classes.root}>
@@ -97,24 +102,26 @@ function Navbar() {
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
-                inputProps={{ "aria-label": "search" }} />
+                inputProps={{ "aria-label": "search" }}
+              />
             </div>
             <Avatar
               alt=""
               src="https://i.imgur.com/6OvsYjP.png"
-              className="nav-avatar" />
+              className="nav-avatar"
+            />
             <BasicMenu />
           </Toolbar>
         </AppBar>
       </div>
-    )
+    );
+  } else if (token === '') {
+    navbarComponent = (
+        <NavbarLogo />
+    );
   }
 
-  return (
-    <>
-      {navbarComponent}
-    </>
-  )
+  return <>{navbarComponent}</>;
 }
 
-export default Navbar
+export default Navbar;
