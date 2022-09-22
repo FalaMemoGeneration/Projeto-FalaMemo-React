@@ -9,7 +9,7 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import { Box, Grid, Rating } from "@mui/material";
+import { Box, Grid, Rating, SelectChangeEvent } from "@mui/material";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -47,6 +47,13 @@ function CadastroPost() {
     id: 0,
     descricao: "",
   });
+
+  // const [rating, setRating] = useState<string>('');
+
+  // const getRating = (e: SelectChangeEvent<{ value: unknown }>) => {
+  //   setRating(e.target.value as string);
+  // }
+
   const [postagem, setPostagem] = useState<Postagem>({
     id: 0,
     titulo: "",
@@ -65,15 +72,11 @@ function CadastroPost() {
     },
   });
 
-  //   function getRating(e: SelectChangeEvent) {
-  //     setRating(e.target.value as string);
-  //   }
-
   useEffect(() => {
     setPostagem({
       ...postagem,
       tema: tema,
-      //   avaliacao: rating
+      // avaliacao: rating
     });
   }, [tema]);
 
@@ -105,7 +108,7 @@ function CadastroPost() {
       ...postagem,
       [e.target.name]: e.target.value,
       tema: tema,
-      //   avaliacao: rating,
+      // avaliacao: rating
     });
   }
 
@@ -150,8 +153,6 @@ function CadastroPost() {
     navigate("/postagens");
   }
 
-  const [rating, setRating] = useState("");
-
   return (
     <Grid container className="topo centralizar">
       <form onSubmit={onSubmit}>
@@ -190,6 +191,26 @@ function CadastroPost() {
           margin="normal"
           fullWidth
         />
+
+{/* <FormControl fullWidth margin="normal">
+              <InputLabel id="demo-simple-select-label">
+                Avaliação
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="avaliacao"
+                value={postagem.avaliacao}
+                label="Avaliação"
+                name="avaliacao"
+                onChange={getRating}
+              >
+                <MenuItem value={1}>1</MenuItem>
+                <MenuItem value={2}>2</MenuItem>
+                <MenuItem value={3}>3</MenuItem>
+                <MenuItem value={4}>4</MenuItem>
+                <MenuItem value={5}>5</MenuItem>
+              </Select>
+            </FormControl> */}
 
         <TextField
             value={postagem.avaliacao}
