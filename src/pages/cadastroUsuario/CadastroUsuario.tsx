@@ -147,8 +147,7 @@ function CadastroUsuario() {
               variant="outlined"
               name="nome"
               margin="normal"
-              fullWidth
-            />
+              fullWidth />
             <TextField
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -158,8 +157,7 @@ function CadastroUsuario() {
               name="usuario"
               margin="normal"
               fullWidth
-              type="email"
-            />
+              type="email" />
             <TextField
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -169,21 +167,17 @@ function CadastroUsuario() {
               name="senha"
               margin="normal"
               fullWidth
-              type="password"
-            />
+              type="password" />
             <TextField
               value={confirmarSenha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                confirmarSenhaHandle(e)
-              }
+              onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
               id="confirmarSenha"
               label="Confirmar senha*"
               variant="outlined"
               name="confirmarSenha"
               margin="normal"
               fullWidth
-              type="password"
-            />
+              type="password" />
             <TextField
               value={user.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -193,8 +187,7 @@ function CadastroUsuario() {
               name="foto"
               margin="normal"
               fullWidth
-              type="url"
-            />
+              type="url" />
 
             {/* <Box sx={{ minWidth: 120 }}> */}
             <FormControl fullWidth margin="normal">
@@ -257,15 +250,15 @@ function CadastroUsuario() {
             </FormControl>
 
             {/* <TextField
-              value={user.pcd}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="pcd"
-              label="Pessoa com deficiência?"
-              variant="outlined"
-              name="pcd"
-              margin="normal"
-              fullWidth
-            /> */}
+      value={user.pcd}
+      onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+      id="pcd"
+      label="Pessoa com deficiência?"
+      variant="outlined"
+      name="pcd"
+      margin="normal"
+      fullWidth
+    /> */}
 
             <Box marginTop={2} textAlign="center">
               <Button

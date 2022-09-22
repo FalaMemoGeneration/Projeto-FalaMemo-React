@@ -9,7 +9,7 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Rating } from "@mui/material";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -190,21 +190,6 @@ function CadastroPost() {
           margin="normal"
           fullWidth
         />
-
-        {/* <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={postagem.avaliacao}
-            label="Avaliação"
-            onChange={getRating}
-          >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl> */}
 
         <TextField
             value={postagem.avaliacao}

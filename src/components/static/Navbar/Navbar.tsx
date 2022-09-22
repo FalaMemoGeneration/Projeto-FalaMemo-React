@@ -1,15 +1,20 @@
-import "./Navbar.css"
-import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import InputBase from "@material-ui/core/InputBase"
-import { createStyles, alpha, Theme, makeStyles } from "@material-ui/core/styles"
-import SearchIcon from "@material-ui/icons/Search"
-import Avatar from "@mui/material/Avatar"
-import { useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
-import { TokenState } from "../../../store/tokens/tokensReducer"
-import BasicMenu from "./Menu/Menu"
-import NavbarLogo from "./NavbarLogo/NavbarLogo"
+import "./Navbar.css";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import InputBase from "@material-ui/core/InputBase";
+import {
+  createStyles,
+  alpha,
+  Theme,
+  makeStyles,
+} from "@material-ui/core/styles";
+import SearchIcon from "@material-ui/icons/Search";
+import Avatar from "@mui/material/Avatar";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import BasicMenu from "./Menu/Menu";
+import NavbarLogo from "./NavbarLogo/NavbarLogo";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -66,17 +71,57 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
   })
-)
+);
 
 function Navbar() {
-  const classes = useStyles()
+  const classes = useStyles();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  )
+  );
 
-  let navbarComponent
-  if (token != "") {
-    navbarComponent = (
+  // let navbarComponent;
+  // if (token) {
+  //   return (
+  //     <div className={classes.root}>
+  //       <AppBar position="static" className="nav-color">
+  //         <Toolbar className="tool-home">
+  //           <Toolbar className="logo-home">
+  //             <Link to="/home">
+  //               <img src="https://i.imgur.com/2XHo3mY.png" />
+  //             </Link>
+  //           </Toolbar>
+
+  //           <div className={classes.search}>
+  //             <div className={classes.searchIcon}>
+  //               <SearchIcon className="nav-search-icon" />
+  //             </div>
+  //             <InputBase
+  //               className="search-color-border"
+  //               placeholder="Buscar empresas"
+  //               classes={{
+  //                 root: classes.inputRoot,
+  //                 input: classes.inputInput,
+  //               }}
+  //               inputProps={{ "aria-label": "search" }}
+  //             />
+  //           </div>
+  //           <Avatar
+  //             alt=""
+  //             src="https://i.imgur.com/6OvsYjP.png"
+  //             className="nav-avatar"
+  //           />
+  //           <BasicMenu />
+  //         </Toolbar>
+  //       </AppBar>
+  //     </div>
+  //   );
+  // } else  {
+  //   navbarComponent = (
+  //       <NavbarLogo />
+  //   );
+  // }
+
+  return token? (
       <div className={classes.root}>
         <AppBar position="static" className="nav-color">
           <Toolbar className="tool-home">
@@ -97,24 +142,21 @@ function Navbar() {
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
-                inputProps={{ "aria-label": "search" }} />
+                inputProps={{ "aria-label": "search" }}
+              />
             </div>
             <Avatar
               alt=""
               src="https://i.imgur.com/6OvsYjP.png"
-              className="nav-avatar" />
+              className="nav-avatar"
+            />
             <BasicMenu />
           </Toolbar>
         </AppBar>
       </div>
-    )
-  }
+    ) :  // else
+    (
+        <NavbarLogo />
+    ) }
 
-  return (
-    <>
-      {navbarComponent}
-    </>
-  )
-}
-
-export default Navbar
+export default Navbar;
