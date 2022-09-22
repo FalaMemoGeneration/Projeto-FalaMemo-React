@@ -2,7 +2,7 @@
     width: 100%;
     height: 100% ;
     padding: 6rem 1rem;
-    background-color: var(--color-white);
+    /* background-color: var(--color-white); */
 }
 
 
@@ -12,7 +12,7 @@
     height: 50vh;
     text-align: justify;
     padding: 2rem 1rem;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
 }
 
 .title-sobre {
@@ -51,7 +51,7 @@
     background: linear-gradient(180deg, #50688B 0%, #1D3557 100%);
     position: absolute;
 
-    top: 83%; 
+    bottom: 2%; 
     left: 30%;                        
     transform: translate(0, -30%)
 }

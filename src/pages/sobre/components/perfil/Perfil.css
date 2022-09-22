@@ -28,22 +28,37 @@
   left: 25%;
 }
 
-.img-impar img{
+.img-impar img {
   display: block;
+  position: relative;
   width: 50%;
   margin: 1rem auto 0;
-  /* left: -25%; */
+  left: -25%;
 }
 
 
-.after-caixa::before{
+.before-caixa::before {
   content: '';
-  width: 90%;
-  height: 290px;
-  background: rgba(159, 159, 159, 0.138);
+  width: 50%;
+  height: 45px;
+  background: rgba(179, 179, 179, 0.568);
   position: absolute;
-  right: 10%;
+  right: 30%;
+  z-index: revert;
 }
+/* 
+.after-caixa::after {
+  content: '';
+  width: 50%;
+  height: 20px;
+  background: rgba(179, 179, 179, 0.568);
+  position: absolute;
+  right: 20%;
+  z-index: revert;
+} */
+
+
+
 
 
 .descricao-perfil {

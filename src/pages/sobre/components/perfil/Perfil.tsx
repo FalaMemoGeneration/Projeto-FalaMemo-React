@@ -30,7 +30,7 @@ const colaboradores = [
     indentificador: "par",
     nome: "Fernando Pajtak",
     texto:
-      "Apaixonado por música e jogos do gênero MOBA. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
+      "Apaixonado por música e jogos. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
     foto: `${FotoPaj}`,
     linkedln: "https://www.linkedin.com/in/fernando-pajtak-barbosa-557279231/",
     github: "https://github.com/pajtakk",
@@ -60,33 +60,34 @@ const colaboradores = [
     indentificador: "impar",
     nome: "Jefferson Rocha",
     texto:
-      "Graduado em RH, mas em transição de carreira para a área de Tecnologia, apaixonado por jogos do gênero RPG.  Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
+      "Estudante de Análise e Desenvolvimento de Sistemas, apaixonado por gatos. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
     foto: `${FotoJeff}`,
-    linkedln: "https://www.linkedin.com/in/filipecavalcantideandrade/",
-    github: "https://github.com/filipecavalcantideandrade",
+    linkedln: "https://www.linkedin.com/in/jefferson-rocha-335494211/",
+    github: "https://github.com/jefftrabalho",
   },
   {
     id: 6,
     indentificador: "par",
-    nome: "Filipe Cavalcanti",
+    nome: "Mariá Dombrate",
     texto:
-      "Graduado em RH, mas em transição de carreira para a área de Tecnologia, apaixonado por jogos do gênero RPG.  Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
+      "Pós-graduada em Neuropsicologia, mas em transição de carreira para a área de Tecnologia. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
     foto: `${FotoMaria}`,
-    linkedln: "https://www.linkedin.com/in/filipecavalcantideandrade/",
-    github: "https://github.com/filipecavalcantideandrade",
+    linkedln: "https://www.linkedin.com/in/mari%C3%A1-calmon-dombrate",
+    github: "https://github.com/dombrate",
   },
   {
     id: 7,
     indentificador: "impar",
-    nome: "Filipe Cavalcanti",
+    nome: "Victoria Alcoforado",
     texto:
-      "Graduado em RH, mas em transição de carreira para a área de Tecnologia, apaixonado por jogos do gênero RPG.  Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
+      "Graduada em Arquitetura e Urbanismo, mas em transição de carreira para a área da Tecnologia.  Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
     foto: `${FotoVictoria}`,
-    linkedln: "https://www.linkedin.com/in/filipecavalcantideandrade/",
-    github: "https://github.com/filipecavalcantideandrade",
+    linkedln: "https://www.linkedin.com/in/victoriaalcoforado/",
+    github: "https://github.com/vickw3",
   },
 
 ];
+
 
 
 
@@ -114,11 +115,11 @@ function Perfil() {
             </Typography>
 
             <Box className="redesocial">
-              <a href={perfil.linkedln}>
+              <a href={perfil.linkedln} target="_blank" rel="noreferrer" >
                 <LinkedInIcon className="icon" />
               </a>
 
-              <a href={perfil.github}>
+              <a href={perfil.github} target="_blank" rel="noreferrer">
                 <GitHubIcon className="icon" />
               </a>
             </Box>
@@ -127,7 +128,7 @@ function Perfil() {
           {perfil.indentificador !== "impar"?
              <>
                <Box className="img-impar" >
-               <span className="after-caixa"></span>
+                <span className="before-caixa"></span>
                  <img src={perfil.foto} alt={perfil.nome} />
                </Box> 
              </>
