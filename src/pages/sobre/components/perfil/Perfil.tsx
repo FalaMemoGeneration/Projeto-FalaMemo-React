@@ -30,7 +30,7 @@ const colaboradores = [
     indentificador: "par",
     nome: "Fernando Pajtak",
     texto:
-      "Apaixonado por música e jogos. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
+      "Apaixonado por música e jogos, buscando aprender sempre através de cursos e documentando no meu github. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
     foto: `${FotoPaj}`,
     linkedln: "https://www.linkedin.com/in/fernando-pajtak-barbosa-557279231/",
     github: "https://github.com/pajtakk",
@@ -60,7 +60,7 @@ const colaboradores = [
     indentificador: "impar",
     nome: "Jefferson Rocha",
     texto:
-      "Estudante de Ciência da Computação, apaixonado por gatos. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
+      "Estudante do 4° semestre de Ciência da Computação, apaixonado por gatos. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
     foto: `${FotoJeff}`,
     linkedln: "https://www.linkedin.com/in/jefferson-rocha-335494211/",
     github: "https://github.com/jefftrabalho",
