@@ -12,8 +12,9 @@
     height: 50vh;
     text-align: justify;
     padding: 2rem 1rem;
-    margin-bottom: 10rem;
+    margin-bottom: 15rem;
 }
+
 
 .title-sobre {
     color: var(--color-blue-01) !important;
@@ -24,10 +25,12 @@
     padding: 1rem 3rem;
 }
 
+
 .logoODS16 img {   
     margin-top: 9rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
 
 .span-memo {
     font-weight: 700;
@@ -38,6 +41,7 @@
     line-height: 1.6;
     font-size: 16px;
 }
+
 
 .sobre-icons {
     color: var(--color-black) !important;
@@ -53,5 +57,5 @@
 
     bottom: 2%; 
     left: 30%;                        
-    transform: translate(0, -30%)
+    transform: translate(0, -30%);
 }

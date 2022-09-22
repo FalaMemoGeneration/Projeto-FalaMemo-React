@@ -60,7 +60,7 @@ const colaboradores = [
     indentificador: "impar",
     nome: "Jefferson Rocha",
     texto:
-      "Estudante de Análise e Desenvolvimento de Sistemas, apaixonado por gatos. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
+      "Estudante de Ciência da Computação, apaixonado por gatos. Formado no Bootcamp da Generation Brasil de Pessoa Desenvolvedora Web Java (Full Stack).",
     foto: `${FotoJeff}`,
     linkedln: "https://www.linkedin.com/in/jefferson-rocha-335494211/",
     github: "https://github.com/jefftrabalho",
@@ -97,14 +97,9 @@ function Perfil() {
       {colaboradores.map((perfil) => (
         <Box className="box-perfil" key={perfil.id}>  
 
-          {perfil.indentificador !== "par"  ?
-            <>              
-              <Box className="img-perfil" >
-                <img src={perfil.foto} alt={perfil.nome} />
-              </Box> 
-            </>
-        : null }
-
+          <Box className="img-perfil" >
+            <img src={perfil.foto} alt={perfil.nome} />
+          </Box> 
           <Box className="descricao-perfil">
             <Typography variant="h4" className="nome">
               {perfil.nome}
@@ -125,14 +120,14 @@ function Perfil() {
             </Box>
           </Box>
 
-          {perfil.indentificador !== "impar"?
+          {/* {perfil.indentificador !== "impar"?
              <>
                <Box className="img-impar" >
-                <span className="before-caixa"></span>
                  <img src={perfil.foto} alt={perfil.nome} />
+               <span className="before-caixa"></span>
                </Box> 
              </>
-        : null }
+        : null } */}
         </Box>
       ))}
     </div>
